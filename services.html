@@ -1,0 +1,3606 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicii Medicale | Dr. Silvia Dumitrescu | Obstetrică-Ginecologie</title>
+  <meta name="description" content="Servicii complete de obstetrică și ginecologie. Consultații, ecografii, monitorizări de sarcină și proceduri medicale.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+  <style>
+    /* Base Styles - Consolidated from style.css */
+    :root {
+      /* Color Palette */
+      --primary: #5d4b9e;
+      --primary-light: #7d6bbf;
+      --primary-dark: #3d2b7e;
+      --secondary: #2c3e50;
+      --accent: #e74c3c;
+      --white: #ffffff;
+      --light: #f8f9fa;
+      --light-gray: #e9ecef;
+      --medium-gray: #ced4da;
+      --dark-gray: #495057;
+      --dark: #212529;
+      
+      /* Typography */
+      --font-main: 'Montserrat', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+      
+      /* Shadows */
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
+      
+      /* Border Radius */
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      /* Transitions */
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s ease;
+      --transition-slow: 0.5s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: var(--light);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--secondary);
+      margin-bottom: var(--space-sm);
+    }
+
+    p {
+      margin-bottom: var(--space-md);
+      color: var(--dark-gray);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-fast);
+    }
+
+    /* Header Styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-normal);
+    }
+
+    .header.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    /* Language Switcher */
+    .language-switcher {
+      display: flex;
+      gap: var(--space-xs);
+      margin-right: var(--space-md);
+    }
+
+    .language-btn {
+      background: none;
+      border: 1px solid var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
+      min-width: 45px;
+    }
+
+    .language-btn:hover {
+      background: var(--primary-light);
+      color: var(--white);
+    }
+
+    .language-btn.active {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    /* Navigation */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--secondary);
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .nav-list {
+      display: flex;
+      gap: var(--space-md);
+      list-style: none;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      font-size: 0.95rem;
+      position: relative;
+      padding: var(--space-sm) 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.85rem;
+    }
+
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition-fast);
+    }
+
+    .nav-link:hover:after,
+    .nav-link.active:after {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: var(--primary);
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(rgba(93, 75, 158, 0.9), rgba(93, 75, 158, 0.9)), url('../images/services-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      padding: calc(var(--space-xl) + 80px) 0 var(--space-xl);
+      text-align: center;
+    }
+
+    .page-header h1 {
+      color: var(--white);
+      font-size: 2.5rem;
+      margin-bottom: var(--space-xs);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header-subtitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.25rem;
+      margin-bottom: 0;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: var(--space-xl) 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-md);
+      position: relative;
+      font-size: 2.25rem;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      margin: var(--space-sm) auto 0;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-lg);
+      color: var(--dark-gray);
+      font-size: 1.1rem;
+    }
+
+    /* Services Section */
+    .services-section {
+      background: var(--light);
+    }
+
+    .service-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+
+    .category-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .category-card.animate {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: var(--shadow-md);
+    }
+
+    .category-header {
+      background: var(--primary);
+      color: var(--white);
+      padding: var(--space-md);
+      text-align: center;
+      transition: var(--transition-normal);
+    }
+
+    .category-card:hover .category-header {
+      background: var(--primary-dark);
+    }
+
+    .category-header h3 {
+      color: var(--white);
+      margin: 0;
+    }
+
+    .service-list {
+      padding: var(--space-md);
+      margin: 0;
+      list-style: none;
+    }
+
+    .service-item {
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--light-gray);
+      transition: var(--transition-fast);
+    }
+
+    .service-item:hover {
+      color: var(--primary);
+      padding-left: var(--space-xs);
+    }
+
+    .service-item:last-child {
+      border-bottom: none;
+    }
+
+    /* Info Cards */
+    .service-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-lg);
+    }
+
+    .info-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .info-card.animate {
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: var(--shadow-md);
+    }
+
+    .info-content i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: var(--space-md);
+      transition: var(--transition-normal);
+    }
+
+    .info-card:hover .info-content i {
+      transform: scale(1.1);
+      color: var(--primary-dark);
+    }
+
+    .info-content h4 {
+      color: var(--secondary);
+      margin-bottom: var(--space-sm);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(rgba(93, 75, 158, 0.9), rgba(93, 75, 158, 0.9)), url('../images/cta-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta-content h2 {
+      color: var(--white);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-content p {
+      color: rgba(255,255,255,0.9);
+      max-width: 600px;
+      margin: 0 auto var(--space-lg);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      transition: var(--transition-normal);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--primary);
+      box-shadow: 0 4px 12px rgba(93, 75, 158, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--light);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 16px rgba(93, 75, 158, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--primary);
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--secondary);
+      color: var(--white);
+      padding: var(--space-xl) 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .footer-col h3 {
+      color: var(--white);
+      margin-bottom: var(--space-md);
+      font-size: 1.25rem;
+      position: relative;
+      padding-bottom: var(--space-sm);
+    }
+
+    .footer-col h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      transition: var(--transition-fast);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+      padding-left: var(--space-xs);
+    }
+
+    .contact-info {
+      list-style: none;
+    }
+
+    .contact-info li {
+      display: flex;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-sm);
+      align-items: center;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .contact-info a {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .contact-info a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: var(--space-md) 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Pulse animation for CTA */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .section {
+        padding: var(--space-lg) 0;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .main-nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        box-shadow: var(--shadow-md);
+        padding: var(--space-md);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: var(--transition-normal);
+      }
+      
+      .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      
+      .nav-list {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+      
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .service-categories {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <style>
+    :root {
+      /* Color Palette */
+      --primary: #5d4b9e;
+      --primary-light: #7d6bbf;
+      --primary-dark: #3d2b7e;
+      --secondary: #2c3e50;
+      --accent: #e74c3c;
+      --white: #ffffff;
+      --light: #f8f9fa;
+      --light-gray: #e9ecef;
+      --medium-gray: #ced4da;
+      --dark-gray: #495057;
+      --dark: #212529;
+      
+      /* Typography */
+      --font-main: 'Montserrat', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+      
+      /* Spacing - using rem for accessibility */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-xxl: 3rem;
+      
+      /* Border Radius */
+      --radius-sm: 0.25rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 1rem;
+      --radius-pill: 9999px;
+      
+      /* Shadows */
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+      
+      /* Transitions */
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s ease;
+    }
+    
+    /* Base Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* Account for fixed header */
+    }
+    
+    body {
+      font-family: var(--font-main);
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: var(--light);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    
+    a:hover {
+      color: var(--primary-dark);
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      line-height: 1.2;
+      color: var (--secondary);
+      margin-bottom: var(--space-md);
+      font-weight: 700;
+    }
+    
+    h1, .h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); }
+    h2, .h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+    h3, .h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+    h4, .h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+    h5, .h5 { font-size: clamp(1rem, 1.5vw, 1.25rem); }
+    h6, .h6 { font-size: clamp(0.875rem, 1vw, 1rem); }
+    
+    p, ul, ol {
+      margin-bottom: var(--space-md);
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+    }
+    
+    /* Utility Classes */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    
+    .text-center { text-align: center; }
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
+    
+    .d-flex { display: flex; }
+    .align-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .flex-column { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    
+    .w-100 { width: 100%; }
+    .h-100 { height: 100%; }
+    
+    /* Margin utility classes */
+    .m-0 { margin: 0; }
+    .mt-1 { margin-top: var(--space-xs); }
+    .mt-2 { margin-top: var(--space-sm); }
+    .mt-3 { margin-top: var(--space-md); }
+    .mt-4 { margin-top: var(--space-lg); }
+    .mt-5 { margin-top: var(--space-xl); }
+    
+    .mb-1 { margin-bottom: var(--space-xs); }
+    .mb-2 { margin-bottom: var(--space-sm); }
+    .mb-3 { margin-bottom: var(--space-md); }
+    .mb-4 { margin-bottom: var(--space-lg); }
+    .mb-5 { margin-bottom: var(--space-xl); }
+    
+    /* Padding utility classes */
+    .p-0 { padding: 0; }
+    .py-1 { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+    .py-2 { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+    .py-3 { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+    .py-4 { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+    .py-5 { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 8px;
+      z-index: 1050;
+      text-decoration: none;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+    }
+    
+    /* Section Styles */
+    .section {
+      padding: var(--space-xl) 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-md);
+      position: relative;
+      color: var(--secondary);
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      margin: var(--space-sm) auto 0;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-lg);
+      color: var(--dark-gray);
+      font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    }
+    
+    /* Header & Navigation */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .header.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      z-index: 1001;
+    }
+    
+    .logo-img {
+      width: 45px;
+      height: 45px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all var(--transition-normal);
+    }
+    
+    .logo:hover .logo-img {
+      transform: scale(1.05);
+      background: var(--primary-dark);
+    }
+    
+    .logo-text {
+      font-family: var(--font-heading);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 700;
+      color: var(--secondary);
+    }
+    
+    /* Language Switcher */
+    .language-switcher {
+      display: flex;
+      gap: 5px;
+      margin-left: auto;
+      margin-right: var(--space-lg);
+      z-index: 1001;
+    }
+    
+    .language-btn {
+      background: none;
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      cursor: pointer;
+      padding: var(--space-xs) var(--space-sm);
+      font-size: 0.875rem;
+      transition: all var(--transition-fast);
+      min-width: 40px;
+      min-height: 35px;
+    }
+    
+    .language-btn:hover {
+      background: var(--primary-light);
+      color: var(--white);
+    }
+    
+    .language-btn.active {
+      background: var(--primary);
+      color: var(--white);
+    }
+    
+    /* Main Navigation */
+    .nav-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .main-nav {
+      display: flex;
+    }
+    
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      list-style: none;
+      margin: 0;
+    }
+    
+    .nav-link {
+      position: relative;
+      font-weight: 600;
+      font-size: clamp(0.9rem, 1.1vw, 1rem);
+      padding: var(--space-md) var(--space-xs);
+      color: var(--secondary);
+      transition: color var(--transition-fast);
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: width var(--transition-normal);
+    }
+    
+    .nav-link:hover, 
+    .nav-link.active {
+      color: var(--primary);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    
+    /* Mobile Navigation */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+      padding: var(--space-xs);
+      width: 44px;
+      height: 44px;
+      transition: color var(--transition-fast);
+    }
+    
+    .mobile-menu-btn:hover,
+    .mobile-menu-btn:focus {
+      color: var(--primary);
+    }
+    
+    /* Mobile nav styles */
+    @media (max-width: 991px) {
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .main-nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        padding: var(--space-lg);
+        transform: translateX(-100%);
+        transition: transform var(--transition-normal);
+        overflow-y: auto;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      
+      .main-nav.active {
+        transform: translateX(0);
+        box-shadow: var(--shadow-lg);
+      }
+      
+      .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--space-sm);
+      }
+      
+      .nav-item {
+        width: 100%;
+      }
+      
+      .nav-link {
+        display: block;
+        width: 100%;
+        padding: var(--space-md);
+        text-align: center;
+        border-radius: var(--radius-md);
+      }
+      
+      .nav-link::after {
+        display: none;
+      }
+      
+      .nav-link:hover, 
+      .nav-link.active {
+        background: rgba(93, 75, 158, 0.1);
+      }
+      
+      .language-switcher {
+        margin-right: var(--space-md);
+      }
+    }
+    
+    /* Button Styles */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-md) var(--space-lg);
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: var(--radius-pill);
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      border: none;
+      box-shadow: var(--shadow-sm);
+      min-height: 48px;
+      gap: var(--space-sm);
+      text-decoration: none;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+    
+    .btn-primary:hover, 
+    .btn-primary:focus {
+      background: var(--primary-dark);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-secondary {
+      background: var(--white);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    
+    .btn-secondary:hover, 
+    .btn-secondary:focus {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    
+    .btn-sm {
+      padding: var(--space-xs) var(--space-md);
+      font-size: 0.875rem;
+      min-height: 40px;
+    }
+    
+    /* Service Link */
+    .service-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      color: var(--primary);
+      font-weight: 600;
+      padding: var(--space-md) var(--space-lg);
+      background: var(--white);
+      border: 2px solid var(--primary);
+      border-radius: var(--radius-pill);
+      margin-top: auto;
+      transition: all var(--transition-normal);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      min-height: 48px;
+      width: 100%;
+    }
+    
+    .service-link i {
+      transition: transform var(--transition-fast);
+    }
+    
+    .service-link:hover, 
+    .service-link:focus {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .service-link:hover i, 
+    .service-link:focus i {
+      transform: translateX(4px);
+    }
+    
+    .button-container {
+      margin-top: var(--space-lg);
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 120px 0 var(--space-xxl);
+      position: relative;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-title {
+      color: var(--white);
+      margin-bottom: var(--space-md);
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      margin-bottom: var(--space-lg);
+      opacity: 0.9;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      margin-top: var(--space-lg);
+    }
+    
+    /* Quick Info */
+    .quick-info {
+      background: var(--white);
+      padding-top: var(--space-xxl);
+      padding-bottom: var(--space-xl);
+      position: relative;
+      z-index: 1;
+      margin-top: -3rem;
+      box-shadow: 0 -20px 30px rgba(0, 0, 0, 0.1);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-lg);
+    }
+    
+    .info-card {
+      background: var(--light);
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: all var(--transition-normal);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .info-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-md);
+      font-size: 1.75rem;
+      color: var(--white);
+      transition: all var(--transition-normal);
+    }
+    
+    .info-card:hover .info-icon {
+      transform: scale(1.05);
+    }
+    
+    /* Featured Services */
+    .featured-services {
+      background: var(--light);
+      padding: var(--space-xxl) 0;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+    
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: all var(--transition-normal);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-md);
+      font-size: 2rem;
+      color: var(--white);
+      transition: all var(--transition-normal);
+    }
+    
+    .service-card:hover .service-icon {
+      transform: scale(1.05);
+    }
+    
+    .service-card h3 {
+      margin-top: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    
+    .service-card p {
+      flex-grow: 1;
+      margin-bottom: var(--space-lg);
+    }
+    
+    /* Why Choose Us */
+    .why-choose-us {
+      background: url('images/pattern-bg.png'), var(--white);
+      padding: var(--space-xxl) 0;
+      position: relative;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: clamp(1rem, 4vw, 2rem);
+      margin-top: var(--space-xl);
+    }
+    
+    .feature {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      transition: all var(--transition-normal);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .feature::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary);
+    }
+    
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .feature-number {
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-sm);
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      color: rgba(93, 75, 158, 0.1);
+      font-weight: 700;
+    }
+    
+    .feature h3 {
+      margin-top: var(--space-xs);
+      margin-bottom: var(--space-md);
+      padding-right: var(--space-lg);
+    }
+    
+    .feature p {
+      margin-bottom: 0;
+    }
+    
+    /* Testimonial Preview */
+    .testimonial-preview {
+      background: var(--light);
+      padding: var(--space-xxl) 0;
+    }
+    
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-sm);
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      transition: all var(--transition-normal);
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .testimonial-content {
+      position: relative;
+      padding-left: var(--space-lg);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .testimonial-content::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: -10px;
+      font-size: 5rem;
+      font-family: var(--font-heading);
+      color: var(--primary);
+      opacity: 0.2;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: var(--space-md);
+    }
+    
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      background: var(--primary);
+      padding: var(--space-md) var(--space-lg);
+      border-radius: var(--radius-md);
+      color: var(--white);
+    }
+    
+    .author-info h4 {
+      margin-bottom: var(--space-xs);
+      color: var(--white);
+    }
+    
+    .author-info p {
+      margin-bottom: 0;
+      opacity: 0.9;
+      font-size: 0.875rem;
+    }
+    
+    .rating {
+      color: #FFD700;
+      font-size: 1.25rem;
+    }
+    
+    /* Call to Action */
+    .cta-section {
+      background: linear-gradient(rgba(93, 75, 158, 0.9), rgba(93, 75, 158, 0.9)), url('images/cta-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+      padding: var(--space-xxl) 0;
+    }
+    
+    .cta-content h2 {
+      color: var(--white);
+      margin-bottom: var(--space-md);
+    }
+    
+    .cta-content p {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto var(--space-lg);
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+    }
+    
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--secondary), #1a2634);
+      color: var(--white);
+      padding-top: var(--space-xxl);
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+    
+    .footer-col h3 {
+      color: var(--white);
+      margin-bottom: var(--space-md);
+      padding-bottom: var(--space-sm);
+      position: relative;
+      font-size: 1.25rem;
+    }
+    
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--primary);
+    }
+    
+    .footer-col p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: var(--space-md);
+    }
+    
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: var(--space-sm);
+    }
+    
+    .footer-col ul li a {
+      color: rgba(255, 255, 255, 0.8);
+      transition: all var(--transition-fast);
+    }
+    
+    .footer-col ul li a:hover {
+      color: var(--white);
+      padding-left: var(--space-xs);
+    }
+    
+    .contact-info li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    
+    .contact-info i {
+      color: var(--primary-light);
+      width: 16px;
+      text-align: center;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: all var(--transition-fast);
+    }
+    
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      padding: var(--space-md) 0;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-bottom p {
+      margin-bottom: 0;
+      font-size: 0.875rem;
+      opacity: 0.7;
+    }
+    
+    .footer-bottom .footer-links {
+      margin-top: var(--space-sm);
+    }
+    
+    .footer-bottom .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0 var(--space-sm);
+      font-size: 0.875rem;
+    }
+    
+    .footer-bottom .footer-links a:hover {
+      color: var(--white);
+      text-decoration: underline;
+    }
+    
+    /* Cookie Consent */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+      padding: var(--space-md);
+      z-index: 999;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .cookie-banner .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+    
+    .cookie-banner p {
+      margin-bottom: 0;
+      flex: 1;
+    }
+    
+    .cookie-buttons {
+      display: flex;
+      gap: var(--space-sm);
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: var(--white);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+      z-index: 900;
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-cta,
+      .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .hero-cta .btn,
+      .cta-buttons .btn {
+        width: 100%;
+      }
+      
+      .testimonial-author {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+      }
+      
+      .rating {
+        margin-top: var(--space-xs);
+      }
+      
+      .cookie-banner .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .service-link {
+        padding: var(--space-md);
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .section {
+        padding: var(--space-xl) 0;
+      }
+      
+      .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .footer-col,
+      .footer-col ul,
+      .contact-info li {
+        text-align: center;
+        justify-content: center;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .footer-bottom .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+      
+      .cookie-buttons {
+        width: 100%;
+      }
+      
+      .cookie-buttons .btn {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Dr. Silvia Dumitrescu homepage">
+        <img src="images/logo.png" alt="Dr. Silvia Dumitrescu Logo" class="logo-img" style="background: transparent;" />
+        <div class="logo-text">Dr. Silvia Dumitrescu</div>
+      </a>
+      
+      <div class="nav-container">
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Deschide meniul">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+        
+        <!-- Main Navigation -->
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">Acasă</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">Despre</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link active">Servicii</a></li>
+            <li class="nav-item"><a href="reviews.html" class="nav-link">Recomandări</a></li>
+            <li class="nav-item"><a href="locations.html" class="nav-link">Programări</a></li>
+            <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+   <!-- Page Header -->
+   <section class="page-header">
+    <div class="container">
+      <div class="header-content">
+        
+        <div class="header-main">
+          <div class="header-badge">
+        <i class="fas fa-stethoscope"></i>
+        <span>Servicii Complete</span>
+          </div>
+          
+          <h1 class="header-title">
+        <span class="title-accent">Servicii</span> Medicale
+          </h1>
+          
+        <p class="header-subtitle"></p>
+
+        <span class="title-accent"></span> 
+          </h1>
+          
+        <p class="header-subtitle">
+          Îngrijire medicală <strong>specializată și profesionistă</strong> în obstetrică și ginecologie, 
+          cu tehnologie modernă și abordare personalizată
+        </p>
+        </div>
+      </div>
+      <!-- Floating elements for visual enhancement -->
+      <div class="header-decoration">
+        <div class="floating-element floating-1">
+          <i class="fas fa-stethoscope"></i>
+        </div>
+        <div class="floating-element floating-2">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="floating-element floating-3">
+          <i class="fas fa-user-md"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+  /* Enhanced Page Header Styles */
+  .page-header {
+    background: linear-gradient(135deg, 
+      rgba(93, 75, 158, 0.95) 0%, 
+      rgba(125, 107, 191, 0.9) 50%, 
+      rgba(93, 75, 158, 0.95) 100%
+    ), url('images/medical-bg-pattern.jpg') center/cover;
+    color: var(--white);
+    padding: 120px 0 80px;
+    text-align: center;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>') repeat;
+    pointer-events: none;
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb Navigation */
+  .header-breadcrumb {
+    margin-bottom: var(--space-lg);
+    opacity: 0;
+    animation: slideInDown 0.6s ease-out 0.2s forwards;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+  }
+
+  .breadcrumb-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 var(--space-sm);
+  }
+
+  .breadcrumb-current {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  /* Header Main Content */
+  .header-main {
+    opacity: 0;
+    animation: slideInUp 0.8s ease-out 0.4s forwards;
+  }
+
+  /* Header Badge */
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-pill);
+    padding: var(--space-sm) var(--space-lg);
+    margin-bottom: var(--space-lg);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+  }
+
+  .header-badge:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .header-badge i {
+    font-size: 1rem;
+    color: #FFD700;
+  }
+
+  /* Enhanced Title */
+  .header-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    position: relative;
+  }
+
+  .title-accent {
+    background: linear-gradient(135deg, #FFD700, #FFA726);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+
+  .title-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #FFD700, #FFA726);
+    border-radius: 2px;
+    transform: scaleX(0);
+    animation: expandLine 1s ease-out 1s forwards;
+  }
+
+  /* Enhanced Subtitle */
+  .header-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header-subtitle strong {
+    color: #FFD700;
+    font-weight: 600;
+  }
+
+  /* Header Highlights */
+  .header-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .highlight-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    transition: all var(--transition-normal);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+
+  .highlight-item:nth-child(1) { animation-delay: 0.6s; }
+  .highlight-item:nth-child(2) { animation-delay: 0.8s; }
+  .highlight-item:nth-child(3) { animation-delay: 1s; }
+
+  .highlight-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .highlight-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #FFD700, #FFA726);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--white);
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  }
+
+  .highlight-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .highlight-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    font-weight: 500;
+  }
+
+  .highlight-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFD700;
+  }
+
+  /* Header CTA Buttons */
+  .header-cta {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: slideInUp 0.6s ease-out 1.2s forwards;
+  }
+
+  .btn-header-primary,
+  .btn-header-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    min-width: 180px;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-header-primary {
+    background: linear-gradient(135deg, #FFD700, #FFA726);
+    color: var(--secondary);
+    border: 2px solid transparent;
+  }
+
+  .btn-header-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    color: var(--secondary);
+  }
+
+  .btn-header-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .btn-header-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+    color: var(--white);
+  }
+
+  /* Floating Decorative Elements */
+  .header-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .floating-element {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 2rem;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .floating-2 {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+  }
+
+  .floating-3 {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+  }
+
+  /* Animations */
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes expandLine {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+    66% {
+      transform: translateY(10px) rotate(-3deg);
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 100px 0 60px;
+      min-height: 50vh;
+    }
+    
+    .header-highlights {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    
+    .highlight-item {
+      padding: var(--space-md);
+    }
+    
+    .header-cta {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .btn-header-primary,
+    .btn-header-secondary {
+      width: 100%;
+      max-width: 280px;
+    }
+    
+    .floating-element {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-badge {
+      padding: var(--space-xs) var(--space-md);
+      font-size: 0.85rem;
+    }
+    
+    .highlight-item {
+      flex-direction: column;
+      text-align: center;
+      gap: var(--space-sm);
+    }
+    
+    .highlight-text {
+      align-items: center;
+    }
+  }
+
+  /* Add smooth scrolling for internal links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add focus styles for accessibility */
+  .breadcrumb-link:focus,
+  .btn-header-primary:focus,
+  .btn-header-secondary:focus {
+    outline: 3px solid rgba(255, 215, 0, 0.5);
+    outline-offset: 2px;
+  }
+  </style>
+
+  <!-- Services Section -->
+  <section class="section services-section">
+    <div class="container">
+      <div class="services-intro animate__animated animate__fadeIn">
+        <h2 class="section-title">Servicii oferite</h2>
+        <p class="section-subtitle">Toate serviciile sunt efectuate cu echipament modern și respectând cele mai înalte standarde medicale.</p>
+      </div>
+      
+      <!-- Service Categories -->
+      <div class="service-categories">
+        
+        <!-- Consultations -->
+        <div class="category-card">
+        <div class="category-header">
+          <div class="category-icon">
+            <i class="fas fa-stethoscope"></i>
+          </div>
+          <h3>Consultații & Evaluări</h3>
+          <p class="category-description">Evaluări medicale complete și specializate</p>
+        </div>
+        <div class="service-content">
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Consultație ginecologică</span>
+          <small class="service-detail">Examinare completă și evaluare</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Control medical periodic</span>
+          <small class="service-detail">Monitorizare preventivă</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Interpretare analize medicale</span>
+          <small class="service-detail">Analiză rezultate și recomandări</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Calcul de risc genetic FMF</span>
+          <small class="service-detail">Evaluare risc chromosomic</small>
+              </div>
+            </li>
+          </ul>
+          <a href="locations.html" class="service-link">
+            <span>Programează consultația</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        </div>
+
+        <!-- Ultrasounds -->
+        <div class="category-card featured">
+        <div class="featured-badge">Popular</div>
+        <div class="category-header">
+          <div class="category-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3>Ecografii</h3>
+          <p class="category-description">Investigații imagistice de înaltă precizie</p>
+        </div>
+        <div class="service-content">
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Ecografie ginecologică transvaginală</span>
+          <small class="service-detail">Examinare detaliată organe reproductive</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Ecografie trans-abdominală</span>
+          <small class="service-detail">Investigație non-invazivă</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Ecografie mamară</span>
+          <small class="service-detail">Screening și diagnostic precoce</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Ecografii de sarcină</span>
+          <small class="service-detail">Monitorizare dezvoltare fetală</small>
+              </div>
+            </li>
+          </ul>
+          <a href="locations.html" class="service-link">
+            <span>Programează ecografia</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        </div>
+
+        <!-- Pregnancy Monitoring -->
+        <div class="category-card">
+        <div class="category-header">
+          <div class="category-icon">
+            <i class="fas fa-baby"></i>
+          </div>
+          <h3>Monitorizare Sarcină</h3>
+          <p class="category-description">Urmărirea completă a dezvoltării sarcinii</p>
+        </div>
+        <div class="service-content">
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Monitorizare sarcină trimestrul I</span>
+          <small class="service-detail">10-14 săptămâni gestație</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Ecografie morfologică trim. II</span>
+          <small class="service-detail">18-22 săptămâni gestație</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Ecografie sarcină trim. III</span>
+          <small class="service-detail">28-32 săptămâni gestație</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Ecografie sarcină gemelară</span>
+          <small class="service-detail">Monitorizare sarcinii multiple</small>
+              </div>
+            </li>
+          </ul>
+          <a href="locations.html" class="service-link">
+            <span>Programează monitorizare</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        </div>
+
+        <!-- Procedures -->
+        <div class="category-card">
+        <div class="category-header">
+          <div class="category-icon">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <h3>Proceduri Medicale</h3>
+          <p class="category-description">Intervenții și proceduri specializate</p>
+        </div>
+        <div class="service-content">
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Colposcopie</span>
+          <small class="service-detail">Examinare cu microscop special</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Montare/extragere sterilet</span>
+          <small class="service-detail">Procedură contraceptivă</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Recoltare probă biopsie</span>
+          <small class="service-detail">Pentru analiză histopatologică</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Histerosonografie</span>
+          <small class="service-detail">Ecografie cu substanță de contrast</small>
+              </div>
+            </li>
+          </ul>
+          <a href="locations.html" class="service-link">
+            <span>Detalii proceduri</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        </div>
+
+        <!-- Laser Services -->
+        <div class="category-card premium">
+        <div class="premium-badge">Premium</div>
+        <div class="category-header">
+          <div class="category-icon">
+            <i class="fas fa-magic"></i>
+          </div>
+          <h3>Tratamente Laser</h3>
+          <p class="category-description">Tehnologii avansate pentru rezultate optime</p>
+        </div>
+        <div class="service-content">
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Excizii laser</span>
+          <small class="service-detail">Îndepărtare leziuni cu precizie</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Rejuvenare vaginală</span>
+          <small class="service-detail">Tehnologie CO2 laser</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Electrocauterizare leziune</span>
+          <small class="service-detail">Tratament termic controlat</small>
+              </div>
+            </li>
+          </ul>
+          <a href="locations.html" class="service-link">
+            <span>Află mai multe</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        </div>
+
+        <!-- Other Services -->
+        <div class="category-card">
+        <div class="category-header">
+          <div class="category-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Servicii Complementare</h3>
+          <p class="category-description">Îngrijire completă și suport medical</p>
+        </div>
+        <div class="service-content">
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Pansamente specializate</span>
+          <small class="service-detail">Îngrijire post-procedurală</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Teste de sarcină/ovulație</span>
+          <small class="service-detail">Teste rapide și sigure</small>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-wrapper">
+          <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="service-text">
+          <span class="service-name">Tratamente locale</span>
+          <small class="service-detail">Aplicații medicamentoase</small>
+              </div>
+            </li>
+          </ul>
+          <a href="locations.html" class="service-link">
+            <span>Contact pentru detalii</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        </div>
+        </div>
+
+        <style>
+        /* Enhanced Service Categories Styles */
+        .service-categories {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+          margin-bottom: 3rem;
+        }
+
+        .category-card {
+          background: linear-gradient(145deg, #ffffff, #f8f9fa);
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(93, 75, 158, 0.08);
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          border: 1px solid rgba(93, 75, 158, 0.1);
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .category-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(90deg, var(--primary), var(--primary-light));
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .category-card:hover::before {
+          opacity: 1;
+        }
+
+        .category-card:hover {
+          transform: translateY(-12px) scale(1.02);
+          box-shadow: 0 25px 50px rgba(93, 75, 158, 0.15);
+        }
+
+        .category-card.featured {
+          border: 2px solid var(--primary);
+          transform: scale(1.05);
+        }
+
+        .category-card.featured::before {
+          opacity: 1;
+          height: 6px;
+        }
+
+        .category-card.premium {
+          background: linear-gradient(145deg, #ffffff, #f8f9fa);
+          border: 2px solid #ffd700;
+        }
+
+        .category-card.premium::before {
+          background: linear-gradient(90deg, #ffd700, #ffed4e);
+          opacity: 1;
+          height: 6px;
+        }
+
+        .featured-badge, .premium-badge {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          background: var(--primary);
+          color: white;
+          padding: 0.4rem 0.8rem;
+          border-radius: 20px;
+          font-size: 0.75rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          z-index: 2;
+          box-shadow: 0 4px 12px rgba(93, 75, 158, 0.3);
+        }
+
+        .premium-badge {
+          background: linear-gradient(135deg, #ffd700, #ffed4e);
+          color: #333;
+        }
+
+        .category-header {
+          padding: 2rem;
+          text-align: center;
+          background: linear-gradient(135deg, rgba(93, 75, 158, 0.02), rgba(93, 75, 158, 0.05));
+          position: relative;
+        }
+
+        .category-icon {
+          width: 80px;
+          height: 80px;
+          background: linear-gradient(135deg, var(--primary), var(--primary-light));
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1.5rem;
+          font-size: 2rem;
+          color: white;
+          box-shadow: 0 8px 25px rgba(93, 75, 158, 0.25);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .category-icon::before {
+          content: '';
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+          transform: rotate(45deg);
+          transition: all 0.6s ease;
+          opacity: 0;
+        }
+
+        .category-card:hover .category-icon::before {
+          animation: shimmer 1.5s ease-in-out;
+        }
+
+        @keyframes shimmer {
+          0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+          50% { opacity: 1; }
+          100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+
+        .category-card:hover .category-icon {
+          transform: scale(1.1) rotate(5deg);
+          box-shadow: 0 12px 35px rgba(93, 75, 158, 0.35);
+        }
+
+        .category-header h3 {
+          margin: 0 0 0.8rem 0;
+          color: var(--secondary);
+          font-size: 1.4rem;
+          font-weight: 700;
+        }
+
+        .category-description {
+          color: var(--dark-gray);
+          font-size: 0.95rem;
+          margin: 0;
+          line-height: 1.5;
+          opacity: 0.8;
+        }
+
+        .service-content {
+          padding: 1.5rem 2rem 2rem;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .service-list {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 1.5rem 0;
+          flex: 1;
+        }
+
+        .service-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          padding: 1rem 0;
+          border-bottom: 1px solid rgba(93, 75, 158, 0.08);
+          transition: all 0.3s ease;
+        }
+
+        .service-item:last-child {
+          border-bottom: none;
+        }
+
+        .service-icon-wrapper {
+          flex-shrink: 0;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+
+        .service-icon-wrapper:hover {
+          transform: scale(1.2);
+        }
+
+        .service-icon-wrapper i {
+          color: var(--primary);
+          font-size: 1rem;
+          transition: all 0.3s ease;
+        }
+
+        .service-icon-wrapper:hover i {
+          color: var(--primary-dark);
+        }
+
+        .service-text {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 0.3rem;
+        }
+
+        .service-name {
+          font-weight: 600;
+          color: var(--secondary);
+          font-size: 0.95rem;
+          line-height: 1.3;
+        }
+
+        .service-detail {
+          color: var(--dark-gray);
+          font-size: 0.8rem;
+          opacity: 0.7;
+          line-height: 1.2;
+        }
+
+        .service-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.8rem;
+          color: white;
+          font-weight: 600;
+          padding: 1rem 1.5rem;
+          background: linear-gradient(135deg, var(--primary), var(--primary-light));
+          border-radius: 50px;
+          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          text-align: center;
+          box-shadow: 0 6px 20px rgba(93, 75, 158, 0.25);
+          position: relative;
+          overflow: hidden;
+          text-decoration: none;
+          margin-top: auto;
+        }
+
+        .service-link::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          transition: left 0.6s ease;
+        }
+
+        .service-link:hover::before {
+          left: 100%;
+        }
+
+        .service-link:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 30px rgba(93, 75, 158, 0.35);
+          background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        }
+
+        .service-link i {
+          transition: transform 0.3s ease;
+        }
+
+        .service-link:hover i {
+          transform: translateX(6px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+          .service-categories {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .service-categories {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          
+          .category-card.featured {
+            transform: none;
+          }
+          
+          .category-header {
+            padding: 1.5rem;
+          }
+          
+          .service-content {
+            padding: 1rem 1.5rem 1.5rem;
+          }
+          
+          .category-icon {
+            width: 70px;
+            height: 70px;
+            font-size: 1.8rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .service-categories {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          
+          .category-header {
+            padding: 1rem;
+          }
+          
+          .service-content {
+            padding: 1rem;
+          }
+          
+          .category-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+          }
+          
+          .service-link {
+            padding: 0.8rem 1.2rem;
+            font-size: 0.9rem;
+          }
+        }
+        </style>
+      <!-- Additional Info -->
+      <div class="enhanced-info-section">
+        <div class="info-grid">
+          <!-- Appointments Card -->
+          <div class="enhanced-info-card appointments-card">
+            <div class="card-header">
+              <div class="icon-wrapper">
+                <i class="fas fa-calendar-check"></i>
+                <div class="icon-bg"></div>
+              </div>
+              <h4>Programări Online</h4>
+              <span class="card-subtitle">Rapid și simplu</span>
+            </div>
+            <div class="card-content">
+              <p>Programează-ți consultația în doar câteva click-uri. Sistemul nostru online îți permite să alegi data și ora care ți se potrivesc cel mai bine.</p>
+              <ul class="features-list">
+                <li><i class="fas fa-check"></i> Programare 24/7</li>
+                <li><i class="fas fa-check"></i> Confirmare instantanee</li>
+                <li><i class="fas fa-check"></i> Reminder automat</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="locations.html" class="enhanced-btn primary-btn">
+                <span>Programează acum</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Information Card -->
+          <div class="enhanced-info-card info-card-detail">
+            <div class="card-header">
+              <div class="icon-wrapper">
+                <i class="fas fa-info-circle"></i>
+                <div class="icon-bg"></div>
+              </div>
+              <h4>Informații Complete</h4>
+              <span class="card-subtitle">Tot ce trebuie să știi</span>
+            </div>
+            <div class="card-content">
+              <p>Oferim transparență completă privind serviciile noastre. Găsești toate informațiile necesare pentru o experiență optimă.</p>
+              <ul class="features-list">
+                <li><i class="fas fa-check"></i> Prețuri transparente</li>
+                <li><i class="fas fa-check"></i> Durata procedurilor</li>
+                <li><i class="fas fa-check"></i> Instrucțiuni pre/post</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="faq.html" class="enhanced-btn secondary-btn">
+                <span>Vezi detalii</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Emergency Card -->
+          <div class="enhanced-info-card emergency-card">
+            <div class="card-header">
+              <div class="icon-wrapper emergency-icon">
+                <i class="fas fa-phone-alt"></i>
+                <div class="icon-bg"></div>
+                <div class="pulse-ring"></div>
+              </div>
+              <h4>Contact Urgent</h4>
+              <span class="card-subtitle">24/7 disponibil</span>
+            </div>
+            <div class="card-content">
+              <p>Pentru situații urgente sau întrebări care nu pot aștepta, suntem disponibili telefonic. Răspunsul nostru este rapid și profesionist.</p>
+              <div class="emergency-info">
+                <div class="phone-number">
+                  <i class="fas fa-phone"></i>
+                  <span>+40 755 123 456</span>
+                </div>
+                <div class="response-time">
+                  <i class="fas fa-clock"></i>
+                  <span>Răspuns în max 30 min</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action">
+              <a href="tel:+40755123456" class="enhanced-btn emergency-btn">
+                <span>Sună acum</span>
+                <i class="fas fa-phone"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+       
+      </div>
+
+      <style>
+      /* Enhanced Info Section Styles */
+      .enhanced-info-section {
+        margin-top: 4rem;
+        position: relative;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .enhanced-info-card {
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        border-radius: 24px;
+        padding: 0;
+        box-shadow: 
+          0 20px 40px rgba(93, 75, 158, 0.08),
+          0 8px 24px rgba(93, 75, 158, 0.04),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(93, 75, 158, 0.08);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .enhanced-info-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--primary));
+        background-size: 200% 100%;
+        animation: gradientShift 3s ease-in-out infinite;
+      }
+
+      @keyframes gradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+
+      .enhanced-info-card:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 
+          0 35px 60px rgba(93, 75, 158, 0.15),
+          0 15px 35px rgba(93, 75, 158, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      }
+
+      /* Specific card variations */
+      .appointments-card:hover { box-shadow: 0 35px 60px rgba(40, 167, 69, 0.15), 0 15px 35px rgba(40, 167, 69, 0.08); }
+      .emergency-card:hover { box-shadow: 0 35px 60px rgba(220, 53, 69, 0.15), 0 15px 35px rgba(220, 53, 69, 0.08); }
+      .digital-card:hover { box-shadow: 0 35px 60px rgba(0, 123, 255, 0.15), 0 15px 35px rgba(0, 123, 255, 0.08); }
+
+      .card-header {
+        padding: 2rem 2rem 1rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .icon-wrapper {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        box-shadow: 
+          0 15px 35px rgba(93, 75, 158, 0.25),
+          inset 0 2px 8px rgba(255, 255, 255, 0.2);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .appointments-card .icon-wrapper {
+        background: linear-gradient(135deg, #28a745, #20c997);
+      }
+
+      .emergency-card .icon-wrapper {
+        background: linear-gradient(135deg, #dc3545, #fd7e14);
+      }
+
+      .digital-card .icon-wrapper {
+        background: linear-gradient(135deg, #007bff, #6f42c1);
+      }
+
+      .icon-wrapper i {
+        font-size: 2rem;
+        color: white;
+        z-index: 2;
+        transition: all 0.3s ease;
+      }
+
+      .icon-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .enhanced-info-card:hover .icon-wrapper {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 
+          0 20px 45px rgba(93, 75, 158, 0.35),
+          inset 0 2px 8px rgba(255, 255, 255, 0.3);
+      }
+
+      .enhanced-info-card:hover .icon-bg {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      .enhanced-info-card:hover .icon-wrapper i {
+        transform: scale(1.1);
+      }
+
+      /* Emergency card pulse animation */
+      .pulse-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border: 3px solid rgba(220, 53, 69, 0.3);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: pulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      }
+
+      @keyframes pulse {
+        0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+      }
+
+      .card-header h4 {
+        margin: 0 0 0.5rem 0;
+        color: var(--secondary);
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .card-subtitle {
+        color: var(--primary);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        opacity: 0.8;
+      }
+
+      .card-content {
+        padding: 0 2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-content p {
+        color: var(--dark-gray);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+      }
+
+      .features-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+      }
+
+      .features-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.6rem 0;
+        color: var(--dark-gray);
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+      }
+
+      .features-list li:hover {
+        color: var(--primary);
+        transform: translateX(8px);
+      }
+
+      .features-list i {
+        color: var(--primary);
+        font-size: 0.8rem;
+        width: 16px;
+        height: 16px;
+        background: rgba(93, 75, 158, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .features-list li:hover i {
+        background: var(--primary);
+        color: white;
+        transform: scale(1.2);
+      }
+
+      .emergency-info {
+        background: linear-gradient(135deg, rgba(220, 53, 69, 0.05), rgba(220, 53, 69, 0.1));
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        border: 1px solid rgba(220, 53, 69, 0.1);
+      }
+
+      .phone-number, .response-time {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+        color: var(--secondary);
+      }
+
+      .phone-number:last-child, .response-time:last-child {
+        margin-bottom: 0;
+      }
+
+      .phone-number i, .response-time i {
+        color: #dc3545;
+        width: 20px;
+      }
+
+      .card-action {
+        padding: 0 2rem 2rem;
+        margin-top: auto;
+      }
+
+      .enhanced-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border: none;
+        cursor: pointer;
+      }
+
+      .enhanced-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.6s ease;
+      }
+
+      .enhanced-btn:hover::before {
+        left: 100%;
+      }
+
+      .primary-btn {
+        background: linear-gradient(135deg, #28a745, #20c997);
+        color: white;
+      }
+
+      .primary-btn:hover {
+        background: linear-gradient(135deg, #218838, #1ea787);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(40, 167, 69, 0.3);
+      }
+
+      .secondary-btn {
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        color: white;
+      }
+
+      .secondary-btn:hover {
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(93, 75, 158, 0.3);
+      }
+
+      .emergency-btn {
+        background: linear-gradient(135deg, #dc3545, #fd7e14);
+        color: white;
+      }
+
+      .emergency-btn:hover {
+        background: linear-gradient(135deg, #c82333, #e66b0f);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(220, 53, 69, 0.3);
+      }
+
+      .digital-btn {
+        background: linear-gradient(135deg, #007bff, #6f42c1);
+        color: white;
+      }
+
+      .digital-btn:hover {
+        background: linear-gradient(135deg, #0056b3, #5a2d91);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(0, 123, 255, 0.3);
+      }
+
+      .enhanced-btn i {
+        transition: transform 0.3s ease;
+      }
+
+      .enhanced-btn:hover i {
+        transform: translateX(4px);
+      }
+
+      /* Stats Section */
+      .stats-section {
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        border-radius: 24px;
+        padding: 3rem 2rem;
+        margin-top: 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stats-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: rotate 20s linear infinite;
+      }
+
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .stat-item {
+        text-align: center;
+        color: white;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: var(--font-heading);
+        margin-bottom: 0.5rem;
+        display: block;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        opacity: 0.9;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .info-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .info-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        
+        .card-header, .card-content, .card-action {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+        
+        .icon-wrapper {
+          width: 70px;
+          height: 70px;
+        }
+        
+        .icon-wrapper i {
+          font-size: 1.8rem;
+        }
+        
+        .stats-container {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+        
+        .stat-number {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .enhanced-info-section {
+          margin-top: 2rem;
+        }
+        
+        .stats-section {
+          padding: 2rem 1rem;
+        }
+        
+        .stats-container {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        
+        .card-header h4 {
+          font-size: 1.3rem;
+        }
+        
+        .enhanced-btn {
+          padding: 0.8rem 1.2rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Counter Animation */
+      @media (prefers-reduced-motion: no-preference) {
+        .stat-number {
+          counter-reset: number var(--start, 0);
+          animation: counter 2s ease-out forwards;
+        }
+        
+        @keyframes counter {
+          from { --start: 0; }
+          to { --start: var(--end); }
+        }
+      }
+      </style>
+
+      <script>
+      // Enhanced counter animation
+      function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number');
+        const options = {
+          threshold: 0.5,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const counter = entry.target;
+              const target = parseInt(counter.getAttribute('data-count'));
+              const duration = 2000;
+              const start = 0;
+              const increment = target / (duration / 16);
+              let current = start;
+
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                counter.textContent = Math.floor(current).toLocaleString();
+              }, 16);
+
+              observer.unobserve(counter);
+            }
+          });
+        }, options);
+
+        counters.forEach(counter => observer.observe(counter));
+      }
+
+      // Initialize animations when DOM is loaded
+      document.addEventListener('DOMContentLoaded', animateCounters);
+
+      // Enhanced hover effects
+      document.querySelectorAll('.enhanced-info-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.setProperty('--hover-scale', '1.02');
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.setProperty('--hover-scale', '1');
+        });
+      });
+      </script>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Programează-ți consultația</h2>
+        <p>Contactează-ne pentru mai multe informații sau pentru a programa o consultație.</p>
+        <div class="cta-buttons">
+          <a href="locations.html" class="btn btn-primary">Contact</a>
+          <a href="tel:+40123456789" class="btn btn-secondary">
+            <i class="fas fa-phone" aria-hidden="true"></i> Sună acum
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Dr. Silvia Dumitrescu</h3>
+          <p>Medic specialist obstetrică-ginecologie cu peste 20 ani de experiență în București, dedicată sănătății și bunăstării femeilor.</p>
+          <div class="social-links" aria-label="Rețele sociale">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Navigare Rapidă</h3>
+          <ul>
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="about.html">Despre Dr. Dumitrescu</a></li>
+            <li><a href="services.html">Servicii Medicale</a></li>
+            <li><a href="reviews.html">Mărturii Paciente</a></li>
+            <li><a href="locations.html">Locațiile Noastre</a></li>
+            <li><a href="faq.html">Întrebări Frecvente</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Servicii Principale</h3>
+          <ul>
+            <li><a href="services.html#consultatie">Consultație Ginecologică</a></li>
+            <li><a href="services.html#sarcina">Monitorizare Sarcină</a></li>
+            <li><a href="services.html#ecografie">Ecografie Ginecologică</a></li>
+            <li><a href="services.html#mamara">Ecografie Mamară</a></li>
+            <li><a href="services.html#preventie">Prevenție și Screening</a></li>
+            <li><a href="services.html#menopauza">Managementul Menopauzei</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>București, România</span>
+            </li>
+            <li>
+              <i class="fas fa-phone-alt" aria-hidden="true"></i>
+              <a href="tel:+40755123456" itemprop="telephone">+40 755 123 456</a>
+            </li>
+            <li>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:contact@drsilvia.com" itemprop="email">contact@drsilvia.com</a>
+            </li>
+            <li>
+              <i class="fas fa-clock" aria-hidden="true"></i>
+              <span itemprop="openingHours" content="Mo-Fr 09:00-17:00">Luni-Vineri: 9:00-17:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2023</span> Dr. Silvia Dumitrescu. Toate drepturile rezervate.</p>
+        <div class="footer-links">
+          <a href="privacy.html">Politica de Confidențialitate</a>
+          <a href="terms.html">Termeni și Condiții</a>
+          <a href="sitemap.html">Hartă Site</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mainNav = document.getElementById('main-nav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate elements when they come into view
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.category-card, .info-card');
+        
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementPosition < windowHeight - 100) {
+            element.classList.add('animate');
+          }
+        });
+      };
+      
+      // Initial check
+      animateOnScroll();
+      
+      // Check on scroll
+      window.addEventListener('scroll', animateOnScroll);
+    });
+
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
