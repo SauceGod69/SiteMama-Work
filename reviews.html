@@ -31,6 +31,10 @@
   <!-- Added AOS library for scroll animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
+  <!-- Add Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
   <style>
     /* Enhanced animations and transitions */
     .nav-link {
@@ -1328,9 +1332,9 @@
           <nav class="main-nav" id="main-nav" aria-label="Main navigation">
             <ul class="nav-list">
               <li class="nav-item"><a href="index.html" class="nav-link">Acasă</a></li>
-              <li class="nav-item"><a href="about.html" class="nav-link active">Despre</a></li>
+              <li class="nav-item"><a href="about.html" class="nav-link ">Despre</a></li>
               <li class="nav-item"><a href="services.html" class="nav-link">Servicii</a></li>
-              <li class="nav-item"><a href="reviews.html" class="nav-link">Recomandări</a></li>
+              <li class="nav-item"><a href="reviews.html" class="nav-link active">Recomandări</a></li>
               <li class="nav-item"><a href="locations.html" class="nav-link">Programări</a></li>
               <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
             </ul>
@@ -1348,7 +1352,7 @@
       <div class="header-main">
         <div class="header-badge">
           <i class="fas fa-star"></i>
-          <span>150+ Recenzii Pozitive</span>
+          <span>850+ Recenzii Pozitive</span>
         </div>
         
         <h1 class="header-title">
@@ -1951,7 +1955,7 @@
               <p class="form-description">Ai fost pacientă la Dr. Dumitrescu? Ajută alte femei să facă o alegere informată prin experiența ta</p>
               <div class="form-stats">
                 <div class="stat-item">
-                  <span class="stat-number">150+</span>
+                  <span class="stat-number">850+</span>
                   <span class="stat-label">Recenzii pozitive</span>
                 </div>
                 <div class="stat-item">
@@ -2140,7 +2144,6 @@
                   <div class="textarea-container">
                     <textarea id="review" name="review" class="form-control" rows="6" required minlength="10" maxlength="1000" placeholder="Povestește-ne despre experiența ta cu Dr. Dumitrescu. Ce te-a impresionat cel mai mult? Cum te-ai simțit în timpul consultațiilor?"></textarea>
                     <div class="character-counter">
-                      <span id="charCount">0</span>/1000 caractere
                       <div class="counter-bar">
                         <div class="counter-fill" id="counterFill"></div>
                       </div>
@@ -2207,23 +2210,7 @@
                 </div>
               </div>
               
-              <!-- Form Messages -->
-              <div id="formSuccess" class="form-message success">
-                <i class="fas fa-check-circle"></i>
-                <div>
-                  <h4>Mulțumim pentru recenzie!</h4>
-                  <p>Recenzia ta a fost trimisă cu succes și va fi verificată înainte de publicare.</p>
-                </div>
-              </div>
               
-              <div id="formError" class="form-message error">
-                <i class="fas fa-exclamation-circle"></i>
-                <div>
-                  <h4>A apărut o eroare</h4>
-                  <p>Te rugăm să încerci din nou mai târziu sau să ne contactezi direct.</p>
-                </div>
-              </div>
-            </form>
             
             <!-- Security Badge -->
             <div class="security-badge">
@@ -2235,12 +2222,7 @@
 
         <style>
         /* Premium Form Styles - Enhanced 159% */
-        .review-form-section {
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-          padding: 4rem 0;
-          position: relative;
-          overflow: hidden;
-        }
+      
 
         .review-form-section::before {
           content: '';
@@ -2881,31 +2863,7 @@
           }
         }
         </style></span>
-              <label for="review">Recenzia ta* (Minim 10 caractere)</label>
-              <textarea id="review" name="review" class="form-control" rows="5" required minlength="10" maxlength="500"></textarea>
-              <small class="form-text"><span id="charCount">0</span>/500 caractere</small>
-            </div>
-            
-            <div class="form-group">
-              <div class="custom-control">
-                <input type="checkbox" id="consent" name="consent" required>
-                <label for="consent">Sunt de acord cu prelucrarea datelor mele personale în scopul publicării acestei recenzii*</label>
-              </div>
-            </div>
-            
-            <div class="submit-wrapper">
-              <button type="submit" class="btn btn-primary">Trimite recenzia</button>
-              <div class="loading-spinner" id="loadingSpinner"></div>
-            </div>
-            
-            <div id="formSuccess" class="form-message success">
-              Mulțumim pentru recenzie! Aceasta va fi verificată înainte de publicare.
-            </div>
-            
-            <div id="formError" class="form-message error">
-              A apărut o eroare. Te rugăm să încerci din nou mai târziu.
-            </div>
-          </form>
+              
         </div>
       </div>
     </section>
@@ -3209,55 +3167,172 @@ if (lang === 'en') {
       document.querySelectorAll('.testimonial-card, .section-title, .section-subtitle').forEach(el => {
         observer.observe(el);
       });
-    </script>
+
+      // --- Firebase Setup ---
+      // TODO: Replace with your Firebase project config
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT_ID.appspot.com",
+        messagingSenderId: "YOUR_SENDER_ID",
+        appId: "YOUR_APP_ID"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+
+      // --- Review Form Logic ---
+      const steps = Array.from(document.querySelectorAll('.form-step'));
+      const nextBtn = document.getElementById('nextBtn');
+      const prevBtn = document.getElementById('prevBtn');
+      const submitWrapper = document.querySelector('.submit-wrapper');
+      const progressFill = document.getElementById('progressFill');
+      const currentStepSpan = document.getElementById('currentStep');
+      let currentStep = 0;
+
+      function showStep(idx) {
+        steps.forEach((step, i) => {
+          step.classList.toggle('active', i === idx);
+        });
+        prevBtn.style.display = idx === 0 ? 'none' : '';
+        nextBtn.style.display = idx === steps.length - 1 ? 'none' : '';
+        submitWrapper.style.display = idx === steps.length - 1 ? '' : 'none';
+        progressFill.style.width = `${((idx + 1) / steps.length) * 100}%`;
+        currentStepSpan.textContent = idx + 1;
+      }
+      showStep(currentStep);
+
+      nextBtn.addEventListener('click', function() {
+        // Validate current step
+        const activeStep = steps[currentStep];
+        const inputs = activeStep.querySelectorAll('input, textarea, select');
+        let valid = true;
+        inputs.forEach(input => {
+          if (!input.checkValidity()) {
+            input.reportValidity();
+            valid = false;
+          }
+        });
+        if (!valid) return;
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+
+      prevBtn.addEventListener('click', function() {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+
+      // Character counter for textarea
+      const counterFill = document.getElementById('counterFill');
+      if (reviewTextarea && charCount && counterFill) {
+        reviewTextarea.addEventListener('input', function() {
+          const len = this.value.length;
+          charCount.textContent = len;
+          counterFill.style.width = Math.min(100, (len / 1000) * 100) + '%';
+        });
+      }
+
+      // --- Submit to Firebase ---
+      reviewForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        loadingSpinner.style.display = 'inline-block';
+        formSuccess.style.display = 'none';
+        formError.style.display = 'none';
+
+        // Gather form data
+        const name = reviewForm.name.value.trim();
+        const email = reviewForm.email.value.trim();
+        const patientSince = reviewForm.patientSince.value || '';
+        const rating = reviewForm.rating.value;
+        const reviewText = reviewForm.review.value.trim();
+        const consent = reviewForm.consent.checked;
+        const newsletter = reviewForm.newsletter && reviewForm.newsletter.checked;
+        const services = Array.from(reviewForm.querySelectorAll('input[name="services[]"]:checked')).map(cb => cb.value);
+
+        // Basic validation
+        if (!name || !email || !rating || !reviewText || !consent) {
+          loadingSpinner.style.display = 'none';
+          formError.style.display = 'block';
+          return;
+        }
+
+        // Save to Firestore
+        try {
+          await db.collection('reviews').add({
+            name,
+            email,
+            patientSince,
+            rating: parseInt(rating, 10),
+            review: reviewText,
+            consent,
+            newsletter,
+            services,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+          loadingSpinner.style.display = 'none';
+          formSuccess.style.display = 'block';
+          reviewForm.reset();
+          currentStep = 0;
+          showStep(currentStep);
+        setTimeout(() => { formSuccess.style.display = 'none'; }, 5000);
+      } catch (err) {
+        loadingSpinner.style.display = 'none';
+        formError.style.display = 'block';
+      }
+    });
+  </script>
     
-    <!-- Structured Data for SEO -->
+    <!-- Date structurate pentru SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Physician",
       "name": "Dr. Silvia Dumitrescu",
-      "medicalSpecialty": ["Obstetrics", "Gynecology"],
+      "medicalSpecialty": ["Obstetrică", "Ginecologie"],
       "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "București",
-        "addressCountry": "RO"
+      "@type": "PostalAddress",
+      "addressLocality": "București",
+      "addressCountry": "RO"
       },
       "telephone": "+40123456789",
       "email": "contact@drsilvia.com",
-      "openingHours": "Mo-Fr 09:00-17:00",
+      "openingHours": "Mo-Vi 09:00-17:00",
       "sameAs": [
-        "https://www.facebook.com/drsilvia",
-        "https://www.instagram.com/drsilvia",
-        "https://www.linkedin.com/in/drsilvia"
+      "https://www.facebook.com/drsilvia",
+      "https://www.instagram.com/drsilvia",
+      "https://www.linkedin.com/in/drsilvia"
       ],
       "review": [
-        {
-          "@type": "Review",
-          "author": "Maria C.",
-          "datePublished": "2023-06-15",
-          "reviewBody": "Dr. Dumitrescu mi-a asistat la nașterea ambilor copii și este ginecologul meu de peste 8 ani. Este extrem de atentă la detalii, explică totul clar și mă face să mă simt în siguranță.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": "Elena D.",
-          "datePublished": "2023-05-22",
-          "reviewBody": "După experiențe neplăcute cu alți doctori, am găsit în Dr. Dumitrescu profesionalismul și empatia de care aveam nevoie.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
+      {
+        "@type": "Review",
+        "author": "Maria C.",
+        "datePublished": "2023-06-15",
+        "reviewBody": "Dr. Dumitrescu mi-a asistat la nașterea ambilor copii și este ginecologul meu de peste 8 ani. Este extrem de atentă la detalii, explică totul clar și mă face să mă simt în siguranță.",
+        "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
         }
+      },
+      {
+        "@type": "Review",
+        "author": "Elena D.",
+        "datePublished": "2023-05-22",
+        "reviewBody": "După experiențe neplăcute cu alți doctori, am găsit în Dr. Dumitrescu profesionalismul și empatia de care aveam nevoie.",
+        "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+        }
+      }
       ]
     }
     </script>
-    
     
     <script>
       // Cookie consent functionality
