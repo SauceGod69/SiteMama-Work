@@ -224,6 +224,75 @@
       transform: translateY(0);
       animation: fadeInUp 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
     }
+
+    @media (max-width: 991px) {
+      .container {
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+      }
+      .faq-section,
+      .faq-categories,
+      .faq-category,
+      .faq-tags {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+      .faq-section {
+        padding: 2rem 0 1rem 0;
+      }
+      .faq-categories {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding: 0;
+      }
+      .faq-category {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        padding: 1.2rem 0.5rem;
+        margin: 0 0 1.2rem 0;
+        border-left: none;
+        border-right: none;
+      }
+      .faq-tags {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        padding: 0;
+      }
+      .faq-tag {
+        width: 100%;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        padding: 1.1rem 0;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(93,75,158,0.08);
+        margin: 0;
+        touch-action: manipulation;
+        user-select: none;
+      }
+    }
+    @media (max-width: 576px) {
+      .faq-section,
+      .faq-categories,
+      .faq-category,
+      .faq-tags {
+        max-width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+      }
+      .faq-category {
+        padding: 1rem 0.2rem;
+      }
+      .faq-tag {
+        font-size: 1.1rem;
+        padding: 1.1rem 0;
+      }
+    }
   </style>
   <style>
     :root {
@@ -453,6 +522,7 @@
       justify-content: space-between;
       align-items: center;
       height: 70px;
+      padding: 0 1rem;
     }
     
     .logo {
@@ -460,6 +530,7 @@
       align-items: center;
       gap: var(--space-sm);
       z-index: 1001;
+      margin-right: auto;
     }
     
     .logo-img {
@@ -524,6 +595,7 @@
     .nav-container {
       display: flex;
       align-items: center;
+      margin-left: auto;
     }
     
     .main-nav {
@@ -581,6 +653,7 @@
       width: 44px;
       height: 44px;
       transition: color var(--transition-fast);
+      margin-left: auto;
     }
     
     .mobile-menu-btn:hover,
@@ -590,10 +663,19 @@
     
     /* Mobile nav styles */
     @media (max-width: 991px) {
+      .header-container {
+        padding: 1.5rem;
+      }
+      
+      .logo {
+        margin-right: 0;
+      }
+      
       .mobile-menu-btn {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-left: auto;
       }
       
       .main-nav {
@@ -648,662 +730,21 @@
       
       .language-switcher {
         margin-right: var(--space-md);
-      }
-    }
-    
-    /* Button Styles */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-md) var(--space-lg);
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: var(--radius-pill);
-      text-align: center;
-      cursor: pointer;
-      transition: all var(--transition-normal);
-      border: none;
-      box-shadow: var(--shadow-sm);
-      min-height: 48px;
-      gap: var(--space-sm);
-      text-decoration: none;
-    }
-    
-    .btn-primary {
-      background: var(--primary);
-      color: var(--white);
-    }
-    
-    .btn-primary:hover, 
-    .btn-primary:focus {
-      background: var(--primary-dark);
-      color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .btn-secondary {
-      background: var(--white);
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-    
-    .btn-secondary:hover, 
-    .btn-secondary:focus {
-      background: var(--primary);
-      color: var(--white);
-      transform: translateY(-2px);
-    }
-    
-    .btn-sm {
-      padding: var(--space-xs) var(--space-md);
-      font-size: 0.875rem;
-      min-height: 40px;
-    }
-    
-    /* Service Link */
-    .service-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-sm);
-      color: var(--primary);
-      font-weight: 600;
-      padding: var(--space-md) var(--space-lg);
-      background: var(--white);
-      border: 2px solid var(--primary);
-      border-radius: var(--radius-pill);
-      margin-top: auto;
-      transition: all var(--transition-normal);
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-      min-height: 48px;
-      width: 100%;
-    }
-    
-    .service-link i {
-      transition: transform var(--transition-fast);
-    }
-    
-    .service-link:hover, 
-    .service-link:focus {
-      background: var(--primary);
-      color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .service-link:hover i, 
-    .service-link:focus i {
-      transform: translateX(4px);
-    }
-    
-    .button-container {
-      margin-top: var(--space-lg);
-      display: flex;
-      justify-content: center;
-    }
-    
-    /* Hero Section */
-    .hero {
-      padding: 120px 0 var(--space-xxl);
-      position: relative;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg');
-      background-size: cover;
-      background-position: center;
-      color: var(--white);
-      text-align: center;
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-    }
-    
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .hero-title {
-      color: var(--white);
-      margin-bottom: var(--space-md);
-      font-size: clamp(2rem, 5vw, 3rem);
-    }
-    
-    .hero-subtitle {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      margin-bottom: var(--space-lg);
-      opacity: 0.9;
-    }
-    
-    .hero-cta {
-      display: flex;
-      gap: var(--space-md);
-      justify-content: center;
-      margin-top: var(--space-lg);
-    }
-    
-    /* Quick Info */
-    .quick-info {
-      background: var(--white);
-      padding-top: var(--space-xxl);
-      padding-bottom: var(--space-xl);
-      position: relative;
-      z-index: 1;
-      margin-top: -3rem;
-      box-shadow: 0 -20px 30px rgba(0, 0, 0, 0.1);
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    }
-    
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: var(--space-lg);
-    }
-    
-    .info-card {
-      background: var(--light);
-      padding: var(--space-lg);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      text-align: center;
-      transition: all var(--transition-normal);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .info-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: var(--space-md);
-      font-size: 1.75rem;
-      color: var(--white);
-      transition: all var(--transition-normal);
-    }
-    
-    .info-card:hover .info-icon {
-      transform: scale(1.05);
-    }
-    
-    /* Featured Services */
-    .featured-services {
-      background: var(--light);
-      padding: var(--space-xxl) 0;
-    }
-    
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: var(--space-lg);
-      margin-top: var(--space-xl);
-    }
-    
-    .service-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: var(--space-lg);
-      box-shadow: var(--shadow-sm);
-      text-align: center;
-      transition: all var(--transition-normal);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .service-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto var(--space-md);
-      font-size: 2rem;
-      color: var(--white);
-      transition: all var(--transition-normal);
-    }
-    
-    .service-card:hover .service-icon {
-      transform: scale(1.05);
-    }
-    
-    .service-card h3 {
-      margin-top: var(--space-sm);
-      margin-bottom: var(--space-md);
-    }
-    
-    .service-card p {
-      flex-grow: 1;
-      margin-bottom: var(--space-lg);
-    }
-    
-    /* Why Choose Us */
-    .why-choose-us {
-      background: url('images/pattern-bg.png'), var(--white);
-      padding: var(--space-xxl) 0;
-      position: relative;
-    }
-    
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: clamp(1rem, 4vw, 2rem);
-      margin-top: var(--space-xl);
-    }
-    
-    .feature {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: var(--radius-lg);
-      padding: var(--space-lg);
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      overflow: hidden;
-      transition: all var(--transition-normal);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .feature::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--primary);
-    }
-    
-    .feature:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .feature-number {
-      position: absolute;
-      top: var(--space-sm);
-      right: var(--space-sm);
-      font-family: var(--font-heading);
-      font-size: 3rem;
-      color: rgba(93, 75, 158, 0.1);
-      font-weight: 700;
-    }
-    
-    .feature h3 {
-      margin-top: var(--space-xs);
-      margin-bottom: var(--space-md);
-      padding-right: var(--space-lg);
-    }
-    
-    .feature p {
-      margin-bottom: 0;
-    }
-    
-    /* Testimonial Preview */
-    .testimonial-preview {
-      background: var(--light);
-      padding: var(--space-xxl) 0;
-    }
-    
-    .testimonial-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: var(--space-xl);
-      box-shadow: var(--shadow-sm);
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      transition: all var(--transition-normal);
-    }
-    
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .testimonial-content {
-      position: relative;
-      padding-left: var(--space-lg);
-      margin-bottom: var(--space-lg);
-    }
-    
-    .testimonial-content::before {
-      content: '"';
-      position: absolute;
-      top: -20px;
-      left: -10px;
-      font-size: 5rem;
-      font-family: var(--font-heading);
-      color: var(--primary);
-      opacity: 0.2;
-    }
-    
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: var(--space-md);
-    }
-    
-    .author-info {
-      display: flex;
-      flex-direction: column;
-      background: var(--primary);
-      padding: var(--space-md) var(--space-lg);
-      border-radius: var(--radius-md);
-      color: var(--white);
-    }
-    
-    .author-info h4 {
-      margin-bottom: var(--space-xs);
-      color: var(--white);
-    }
-    
-    .author-info p {
-      margin-bottom: 0;
-      opacity: 0.9;
-      font-size: 0.875rem;
-    }
-    
-    .rating {
-      color: #FFD700;
-      font-size: 1.25rem;
-    }
-    
-    /* Call to Action */
-    .cta-section {
-      background: linear-gradient(rgba(93, 75, 158, 0.9), rgba(93, 75, 158, 0.9)), url('images/cta-bg.jpg');
-      background-size: cover;
-      background-position: center;
-      color: var(--white);
-      text-align: center;
-      padding: var(--space-xxl) 0;
-    }
-    
-    .cta-content h2 {
-      color: var(--white);
-      margin-bottom: var(--space-md);
-    }
-    
-    .cta-content p {
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 600px;
-      margin: 0 auto var(--space-lg);
-    }
-    
-    .cta-buttons {
-      display: flex;
-      gap: var(--space-md);
-      justify-content: center;
-    }
-    
-    /* Footer */
-    .footer {
-      background: linear-gradient(135deg, var(--secondary), #1a2634);
-      color: var(--white);
-      padding-top: var(--space-xxl);
-    }
-    
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: var(--space-xl);
-      margin-bottom: var(--space-xl);
-    }
-    
-    .footer-col h3 {
-      color: var(--white);
-      margin-bottom: var(--space-md);
-      padding-bottom: var(--space-sm);
-      position: relative;
-      font-size: 1.25rem;
-    }
-    
-    .footer-col h3::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background: var(--primary);
-    }
-    
-    .footer-col p {
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: var(--space-md);
-    }
-    
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .footer-col ul li {
-      margin-bottom: var(--space-sm);
-    }
-    
-    .footer-col ul li a {
-      color: rgba(255, 255, 255, 0.8);
-      transition: all var(--transition-fast);
-    }
-    
-    .footer-col ul li a:hover {
-      color: var(--white);
-      padding-left: var(--space-xs);
-    }
-    
-    .contact-info li {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-md);
-    }
-    
-    .contact-info i {
-      color: var(--primary-light);
-      width: 16px;
-      text-align: center;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: var(--space-sm);
-      margin-top: var(--space-md);
-    }
-    
-    .social-links a {
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      transition: all var(--transition-fast);
-    }
-    
-    .social-links a:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
-    }
-    
-    .footer-bottom {
-      padding: var(--space-md) 0;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .footer-bottom p {
-      margin-bottom: 0;
-      font-size: 0.875rem;
-      opacity: 0.7;
-    }
-    
-    .footer-bottom .footer-links {
-      margin-top: var(--space-sm);
-    }
-    
-    .footer-bottom .footer-links a {
-      color: rgba(255, 255, 255, 0.7);
-      margin: 0 var(--space-sm);
-      font-size: 0.875rem;
-    }
-    
-    .footer-bottom .footer-links a:hover {
-      color: var(--white);
-      text-decoration: underline;
-    }
-    
-    /* Cookie Consent */
-    .cookie-banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
-      padding: var(--space-md);
-      z-index: 999;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-    
-    .cookie-banner .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: var(--space-md);
-    }
-    
-    .cookie-banner p {
-      margin-bottom: 0;
-      flex: 1;
-    }
-    
-    .cookie-buttons {
-      display: flex;
-      gap: var(--space-sm);
-    }
-    
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--primary);
-      color: var(--white);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-md);
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all var(--transition-normal);
-      z-index: 900;
-    }
-    
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .back-to-top:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-    }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .hero-cta,
-      .cta-buttons {
-        flex-direction: column;
-        width: 100%;
-      }
-      
-      .hero-cta .btn,
-      .cta-buttons .btn {
-        width: 100%;
-      }
-      
-      .testimonial-author {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-md);
-      }
-      
-      .rating {
-        margin-top: var(--space-xs);
-      }
-      
-      .cookie-banner .container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      
-      .service-link {
-        padding: var(--space-md);
+        margin-left: 0; 
       }
     }
     
     @media (max-width: 576px) {
-      .section {
-        padding: var(--space-xl) 0;
+      .header-container {
+        padding: 0 1rem;
       }
       
-      .footer-col h3::after {
-        left: 50%;
-        transform: translateX(-50%);
+      .logo-text {
+        font-size: 1rem;
       }
       
-      .footer-col,
-      .footer-col ul,
-      .contact-info li {
-        text-align: center;
-        justify-content: center;
-      }
-      
-      .social-links {
-        justify-content: center;
-      }
-      
-      .footer-bottom .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-sm);
-      }
-      
-      .cookie-buttons {
-        width: 100%;
-      }
-      
-      .cookie-buttons .btn {
-        flex: 1;
+      .language-switcher {
+        margin-right: var(--space-sm);
       }
     }
   </style>
@@ -1816,15 +1257,7 @@
   <section class="faq-section">
     <div class="container">
       <!-- FAQ Tags -->
-      <div class="faq-tags">
-        <button class="faq-tag active" data-category="all">Toate</button>
-        <button class="faq-tag" data-category="consultations">Consultații</button>
-        <button class="faq-tag" data-category="pregnancy">Sarcină</button>
-        <button class="faq-tag" data-category="appointments">Programări</button>
-        <button class="faq-tag" data-category="procedures">Proceduri</button>
-        <button class="faq-tag" data-category="prevention">Prevenție</button>
-        <button class="faq-tag" data-category="general">Generale</button>
-      </div>
+    
 
       <!-- FAQ Categories -->
       <div class="faq-categories">
@@ -2280,7 +1713,7 @@
                   <li><strong>Examinare completă:</strong> După debutul vieții sexuale sau cel târziu la 21 de ani</li>
                   <li><strong>Primul test Papanicolau:</strong> La 21 de ani sau după trei ani de la debutul vieții sexuale</li>
                 </ul>
-                <p>Prima consultație se concentrează pe educație, prevenție și stabilirea unei relații de încredere medic-pacient. Examinarea fizică completă poate fi amânată dacă pacienta nu este activă sexual și nu prezintă simptome. Este important de menționat că adolescentele pot veni singure la consultație, confidențialitatea fiind respectată conform legii.</p>
+                <p>Prima consultație se concentrează pe educație, prevenție și stabilirea unei relației de încredere medic-pacient. Examinarea fizică completă poate fi amânată dacă pacienta nu este activă sexual și nu prezintă simptome. Este important de menționat că adolescentele pot veni singure la consultație, confidențialitatea fiind respectată conform legii.</p>
               </div>
             </div>
             <div class="faq-item">
@@ -2422,63 +1855,7 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h3>Dr. Silvia Dumitrescu</h3>
-          <p>Medic primar obstetrică-ginecologie cu peste 20 ani de experiență, dedicată sănătății și bunăstării femeilor.</p>
-          <div class="social-links" aria-label="Rețele sociale">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-          </div>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Navigare Rapidă</h3>
-          <ul>
-            <li><a href="index.html">Acasă</a></li>
-            <li><a href="about.html">Despre Dr. Dumitrescu</a></li>
-            <li><a href="services.html">Servicii Medicale</a></li>
-            <li><a href="reviews.html">Mărturii Paciente</a></li>
-            <li><a href="locations.html">Programări</a></li>
-            <li><a href="faq.html">Întrebări Frecvente</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Servicii Principale</h3>
-          <ul>
-            <li><a href="services.html#consultatie">Consultație Ginecologică</a></li>
-            <li><a href="services.html#sarcina">Monitorizare Sarcină</a></li>
-            <li><a href="services.html#ecografie">Ecografie Ginecologică</a></li>
-            <li><a href="services.html#mamara">Ecografie Mamară</a></li>
-            <li><a href="services.html#preventie">Prevenție și Screening</a></li>
-            <li><a href="services.html#menopauza">Managementul Menopauzei</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Contact</h3>
-          <ul class="contact-info">
-            <li>
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <span>București, România</span>
-            </li>
-            <li>
-              <i class="fas fa-phone-alt" aria-hidden="true"></i>
-              <a href="tel:+40755123456" itemprop="telephone">+40 755 123 456</a>
-            </li>
-            <li>
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              <a href="mailto:contact@drsilvia.com" itemprop="email">contact@drsilvia.com</a>
-            </li>
-            <li>
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              <span itemprop="openingHours" content="Mo-Fr 09:00-17:00">Luni-Vineri: 9:00-17:00</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+      
       
       <div class="footer-bottom">
         <p>&copy; <span id="current-year">2023</span> Dr. Silvia Dumitrescu. Toate drepturile rezervate.</p>

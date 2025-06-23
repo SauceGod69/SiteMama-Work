@@ -1262,10 +1262,10 @@
         <!-- Language Switcher -->
         
         
-        <!-- Mobile Menu Button -->
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Deschide meniul">
-          <i class="fas fa-bars" aria-hidden="true"></i>
-        </button>
+        <!-- Mobile Menu Button FIXED -->
+<button class="mobile-menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Deschide meniul">
+  <i class="fas fa-bars" aria-hidden="true"></i>
+</button>
         
         <!-- Main Navigation -->
         <nav class="main-nav" id="main-nav" aria-label="Main navigation">
@@ -1952,21 +1952,23 @@
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="section cta-section" aria-labelledby="cta-title" data-aos="fade-up" data-aos-duration="800">
-      <div class="container">
-        <div class="cta-content">
+      <!-- Call to Action -->
+      <section class="section cta-section" aria-labelledby="cta-title">
+        <div class="container">
+        <div class="""cta-content"></div>
           <h2 id="cta-title">Programează-ți consultația astăzi</h2>
-          <p>Îți punem sănătatea pe primul loc. Contactează-ne pentru o consultație personalizată și îngrijire ginecologică de specialitate.</p>
+          <p style="color: white;">Îți punem sănătatea pe primul loc. Contactează-ne pentru o consultație personalizată și îngrijire ginecologică de specialitate.</p>
           <div class="cta-buttons">
-            <a href="locations.html" class="btn btn-primary">Programare online</a>
-            <a href="tel:+40720058869" class="btn btn-secondary">
-              <i class="fas fa-phone" aria-hidden="true"></i> Sună acum
-            </a>
+          <a href="locations.html" class="btn btn-primary btn-pulse">
+            <i class="fas fa-phone" aria-hidden="true"></i> Programează-te acum
+          </a>
+          <a href="services.html" class="btn btn-secondary">
+            <i class="fas fa-list-ul" aria-hidden="true"></i> Vezi serviciile
+          </a>
           </div>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
   </main>
 
   <!-- Back to Top Button -->
@@ -1974,76 +1976,7 @@
     <i class="fas fa-arrow-up" aria-hidden="true"></i>
   </button>
 
-  <!-- Cookie Consent Banner -->
-  <div id="cookie-consent" class="cookie-banner" hidden>
-    <div class="container">
-      <p>Acest website folosește cookies pentru a îmbunătăți experiența dumneavoastră. <a href="privacy.html">Politica de confidențialitate</a></p>
-      <div class="cookie-buttons">
-        <button id="accept-cookies" class="btn btn-primary btn-sm">Accept</button>
-        <button id="decline-cookies" class="btn btn-secondary btn-sm">Personalizează</button>
-      </div>
-    </div>
-  </div>
-
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h3>Dr. Silvia Dumitrescu</h3>
-          <p>Medic primar obstetrică-ginecologie cu peste 20 ani de experiență, dedicată sănătății și bunăstării femeilor.</p>
-          <div class="social-links" aria-label="Rețele sociale">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-          </div>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Navigare Rapidă</h3>
-          <ul>
-            <li><a href="index.html">Acasă</a></li>
-            <li><a href="about.html">Despre Dr. Dumitrescu</a></li>
-            <li><a href="services.html">Servicii Medicale</a></li>
-            <li><a href="reviews.html">Mărturii Paciente</a></li>
-            <li><a href="locations.html">Programări</a></li>
-            <li><a href="faq.html">Întrebări Frecvente</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Servicii Principale</h3>
-          <ul>
-            <li><a href="services.html#consultatie">Consultație Ginecologică</a></li>
-            <li><a href="services.html#sarcina">Monitorizare Sarcină</a></li>
-            <li><a href="services.html#ecografie">Ecografie Ginecologică</a></li>
-            <li><a href="services.html#mamara">Ecografie Mamară</a></li>
-            <li><a href="services.html#preventie">Prevenție și Screening</a></li>
-            <li><a href="services.html#menopauza">Managementul Menopauzei</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Contact</h3>
-          <ul class="contact-info">
-            <li>
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <span>București, România</span>
-            </li>
-            <li>
-              <i class="fas fa-phone-alt" aria-hidden="true"></i>
-              <a href="tel:+40755123456" itemprop="telephone">+40 755 123 456</a>
-            </li>
-            <li>
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              <a href="mailto:contact@drsilvia.com" itemprop="email">contact@drsilvia.com</a>
-            </li>
-            <li>
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              <span itemprop="openingHours" content="Mo-Fr 09:00-17:00">Luni-Vineri: 9:00-17:00</span>
-            </li>
-          </ul>
-        </div>
-      </div>
       
       <div class="footer-bottom">
         <p>&copy; <span id="current-year">2023</span> Dr. Silvia Dumitrescu. Toate drepturile rezervate.</p>
@@ -2068,16 +2001,28 @@
     
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
-      const menuBtn = document.getElementById('mobile-menu-btn');
-      const mainNav = document.getElementById('main-nav');
-      
-      menuBtn.addEventListener('click', function() {
-        const expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
-        mainNav.classList.toggle('active');
-        this.innerHTML = expanded ? '<i class="fas fa-bars" aria-hidden="true"></i>' : '<i class="fas fa-times" aria-hidden="true"></i>';
-      });
-      
+      // Mobile Menu Toggle - UPDATED
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mainNav = document.getElementById('main-nav');
+
+if (menuBtn && mainNav) {
+  menuBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !expanded);
+    mainNav.classList.toggle('active');
+    
+    // Update icon
+    const icon = this.querySelector('i');
+    if (expanded) {
+      icon.className = 'fas fa-bars';
+    } else {
+      icon.className = 'fas fa-times';
+    }
+  });
+}
       // Close menu when clicking outside
       document.addEventListener('click', function(event) {
         const isClickInside = mainNav.contains(event.target) || menuBtn.contains(event.target);

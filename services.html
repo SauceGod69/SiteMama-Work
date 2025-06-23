@@ -328,8 +328,9 @@
     }
 
     .category-card:hover .category-header {
-      background: var(--primary-dark);
-    }
+  background: linear-gradient(135deg, rgba(93, 75, 158, 0.03), rgba(93, 75, 158, 0.08));
+  transform: translateY(-2px);
+}
 
     .category-header h3 {
       color: var(--white);
@@ -393,10 +394,7 @@
       transition: var(--transition-normal);
     }
 
-    .info-card:hover .info-content i {
-      transform: scale(1.1);
-      color: var(--primary-dark);
-    }
+   
 
     .info-content h4 {
       color: var(--secondary);
@@ -687,10 +685,6 @@
       color: var(--primary);
       text-decoration: none;
       transition: color var(--transition-fast);
-    }
-    
-    a:hover {
-      color: var(--primary-dark);
     }
     
     /* Typography */
@@ -1246,10 +1240,6 @@
       flex-direction: column;
     }
     
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
     
     .service-icon {
       width: 80px;
@@ -1265,9 +1255,6 @@
       transition: all var(--transition-normal);
     }
     
-    .service-card:hover .service-icon {
-      transform: scale(1.05);
-    }
     
     .service-card h3 {
       margin-top: var(--space-sm);
@@ -2553,10 +2540,7 @@
           opacity: 1;
         }
 
-        .category-card:hover {
-          transform: translateY(-12px) scale(1.02);
-          box-shadow: 0 25px 50px rgba(93, 75, 158, 0.15);
-        }
+       
 
         .category-card.featured {
           border: 2px solid var(--primary);
@@ -2647,10 +2631,7 @@
           100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
         }
 
-        .category-card:hover .category-icon {
-          transform: scale(1.1) rotate(5deg);
-          box-shadow: 0 12px 35px rgba(93, 75, 158, 0.35);
-        }
+        
 
         .category-header h3 {
           margin: 0 0 0.8rem 0;
@@ -2847,92 +2828,7 @@
         }
         </style>
       <!-- Additional Info -->
-      <div class="enhanced-info-section">
-        <div class="info-grid">
-          <!-- Appointments Card -->
-          <div class="enhanced-info-card appointments-card">
-            <div class="card-header">
-              <div class="icon-wrapper">
-                <i class="fas fa-calendar-check"></i>
-                <div class="icon-bg"></div>
-              </div>
-              <h4>Programări Online</h4>
-              <span class="card-subtitle">Rapid și simplu</span>
-            </div>
-            <div class="card-content">
-              <p>Programează-ți consultația în doar câteva click-uri. Sistemul nostru online îți permite să alegi data și ora care ți se potrivesc cel mai bine.</p>
-              <ul class="features-list">
-                <li><i class="fas fa-check"></i> Programare 24/7</li>
-                <li><i class="fas fa-check"></i> Confirmare instantanee</li>
-                <li><i class="fas fa-check"></i> Reminder automat</li>
-              </ul>
-            </div>
-            <div class="card-action">
-              <a href="locations.html" class="enhanced-btn primary-btn">
-                <span>Programează acum</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Information Card -->
-          <div class="enhanced-info-card info-card-detail">
-            <div class="card-header">
-              <div class="icon-wrapper">
-                <i class="fas fa-info-circle"></i>
-                <div class="icon-bg"></div>
-              </div>
-              <h4>Informații Complete</h4>
-              <span class="card-subtitle">Tot ce trebuie să știi</span>
-            </div>
-            <div class="card-content">
-              <p>Oferim transparență completă privind serviciile noastre. Găsești toate informațiile necesare pentru o experiență optimă.</p>
-              <ul class="features-list">
-                <li><i class="fas fa-check"></i> Prețuri transparente</li>
-                <li><i class="fas fa-check"></i> Durata procedurilor</li>
-                <li><i class="fas fa-check"></i> Instrucțiuni pre/post</li>
-              </ul>
-            </div>
-            <div class="card-action">
-              <a href="faq.html" class="enhanced-btn secondary-btn">
-                <span>Vezi detalii</span>
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Emergency Card -->
-          <div class="enhanced-info-card emergency-card">
-            <div class="card-header">
-              <div class="icon-wrapper emergency-icon">
-                <i class="fas fa-phone-alt"></i>
-                <div class="icon-bg"></div>
-                <div class="pulse-ring"></div>
-              </div>
-              <h4>Contact Urgent</h4>
-              <span class="card-subtitle">24/7 disponibil</span>
-            </div>
-            <div class="card-content">
-              <p>Pentru situații urgente sau întrebări care nu pot aștepta, suntem disponibili telefonic. Răspunsul nostru este rapid și profesionist.</p>
-              <div class="emergency-info">
-                <div class="phone-number">
-                  <i class="fas fa-phone"></i>
-                  <span>+40 755 123 456</span>
-                </div>
-                <div class="response-time">
-                  <i class="fas fa-clock"></i>
-                  <span>Răspuns în max 30 min</span>
-                </div>
-              </div>
-            </div>
-            <div class="card-action">
-              <a href="tel:+40755123456" class="enhanced-btn emergency-btn">
-                <span>Sună acum</span>
-                <i class="fas fa-phone"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+     
 
        
       </div>
@@ -2985,19 +2881,9 @@
         50% { background-position: 100% 50%; }
       }
 
-      .enhanced-info-card:hover {
-        transform: translateY(-12px) scale(1.02);
-        box-shadow: 
-          0 35px 60px rgba(93, 75, 158, 0.15),
-          0 15px 35px rgba(93, 75, 158, 0.08),
-          inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      }
+      
 
-      /* Specific card variations */
-      .appointments-card:hover { box-shadow: 0 35px 60px rgba(40, 167, 69, 0.15), 0 15px 35px rgba(40, 167, 69, 0.08); }
-      .emergency-card:hover { box-shadow: 0 35px 60px rgba(220, 53, 69, 0.15), 0 15px 35px rgba(220, 53, 69, 0.08); }
-      .digital-card:hover { box-shadow: 0 35px 60px rgba(0, 123, 255, 0.15), 0 15px 35px rgba(0, 123, 255, 0.08); }
-
+      
       .card-header {
         padding: 2rem 2rem 1rem;
         text-align: center;
@@ -3051,12 +2937,7 @@
         transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
 
-      .enhanced-info-card:hover .icon-wrapper {
-        transform: scale(1.1) rotate(5deg);
-        box-shadow: 
-          0 20px 45px rgba(93, 75, 158, 0.35),
-          inset 0 2px 8px rgba(255, 255, 255, 0.3);
-      }
+     
 
       .enhanced-info-card:hover .icon-bg {
         transform: translate(-50%, -50%) scale(1);
@@ -3131,11 +3012,7 @@
         transition: all 0.3s ease;
       }
 
-      .features-list li:hover {
-        color: var(--primary);
-        transform: translateX(8px);
-      }
-
+     
       .features-list i {
         color: var(--primary);
         font-size: 0.8rem;
@@ -3150,12 +3027,7 @@
         transition: all 0.3s ease;
       }
 
-      .features-list li:hover i {
-        background: var(--primary);
-        color: white;
-        transform: scale(1.2);
-      }
-
+   
       .emergency-info {
         background: linear-gradient(135deg, rgba(220, 53, 69, 0.05), rgba(220, 53, 69, 0.1));
         border-radius: 16px;
@@ -3458,83 +3330,27 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="section cta-section" data-aos="fade-up" data-aos-duration="800">
+  <!-- Call to Action -->
+  <section class="section cta-section" aria-labelledby="cta-title">
     <div class="container">
-      <div class="cta-content">
-        <h2>Programează-ți consultația</h2>
-        <p>Contactează-ne pentru mai multe informații sau pentru a programa o consultație.</p>
-        <div class="cta-buttons">
-          <a href="locations.html" class="btn btn-primary">Contact</a>
-          <a href="tel:+40123456789" class="btn btn-secondary">
-            <i class="fas fa-phone" aria-hidden="true"></i> Sună acum
-          </a>
-        </div>
+    <div class="""cta-content"></div>
+      <h2 id="cta-title" style="color: #fff;">Programează-ți consultația astăzi</h2>
+      <p style="color: white;">Îți punem sănătatea pe primul loc. Contactează-ne pentru o consultație personalizată și îngrijire ginecologică de specialitate.</p>
+      <div class="cta-buttons">
+      <a href="locations.html" class="btn btn-primary btn-pulse">
+        <i class="fas fa-phone" aria-hidden="true"></i> Programează-te acum
+      </a>
+      <a href="services.html" class="btn btn-secondary">
+        <i class="fas fa-list-ul" aria-hidden="true"></i> Vezi serviciile
+      </a>
       </div>
+    </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h3>Dr. Silvia Dumitrescu</h3>
-          <p>Medic specialist obstetrică-ginecologie cu peste 20 ani de experiență în București, dedicată sănătății și bunăstării femeilor.</p>
-          <div class="social-links" aria-label="Rețele sociale">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-          </div>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Navigare Rapidă</h3>
-          <ul>
-            <li><a href="index.html">Acasă</a></li>
-            <li><a href="about.html">Despre Dr. Dumitrescu</a></li>
-            <li><a href="services.html">Servicii Medicale</a></li>
-            <li><a href="reviews.html">Mărturii Paciente</a></li>
-            <li><a href="locations.html">Locațiile Noastre</a></li>
-            <li><a href="faq.html">Întrebări Frecvente</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Servicii Principale</h3>
-          <ul>
-            <li><a href="services.html#consultatie">Consultație Ginecologică</a></li>
-            <li><a href="services.html#sarcina">Monitorizare Sarcină</a></li>
-            <li><a href="services.html#ecografie">Ecografie Ginecologică</a></li>
-            <li><a href="services.html#mamara">Ecografie Mamară</a></li>
-            <li><a href="services.html#preventie">Prevenție și Screening</a></li>
-            <li><a href="services.html#menopauza">Managementul Menopauzei</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Contact</h3>
-          <ul class="contact-info">
-            <li>
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <span>București, România</span>
-            </li>
-            <li>
-              <i class="fas fa-phone-alt" aria-hidden="true"></i>
-              <a href="tel:+40755123456" itemprop="telephone">+40 755 123 456</a>
-            </li>
-            <li>
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              <a href="mailto:contact@drsilvia.com" itemprop="email">contact@drsilvia.com</a>
-            </li>
-            <li>
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              <span itemprop="openingHours" content="Mo-Fr 09:00-17:00">Luni-Vineri: 9:00-17:00</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
+    
       <div class="footer-bottom">
         <p>&copy; <span id="current-year">2023</span> Dr. Silvia Dumitrescu. Toate drepturile rezervate.</p>
         <div class="footer-links">

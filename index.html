@@ -381,7 +381,7 @@
       padding: 2.5rem;
       background: transparent;
       border: none;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
     }
 
     /* Remove all overlays/tints */
@@ -687,6 +687,83 @@
       .testimonial-content::before { font-size: 2.2rem; top: -8px; }
       .author-info { padding: 0.7rem 1rem; font-size: 0.95rem; }
     }
+
+   /* Enhanced Mobile Menu Button - FIXED */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: 2px solid transparent;
+  color: var(--secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  transition: all var(--transition-fast);
+  /* Ensure proper centering */
+  align-items: center;
+  justify-content: center;
+  /* Better touch target */
+  min-width: 48px;
+  min-height: 48px;
+  /* Remove any nested pointer issues */
+  position: relative;
+}
+
+.mobile-menu-btn:hover,
+.mobile-menu-btn:focus {
+  color: var(--primary);
+  background: rgba(93, 75, 158, 0.1);
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.95);
+  background: rgba(93, 75, 158, 0.2);
+}
+
+/* Remove the nested .menu-icon styles since we're not using it anymore */
+.mobile-menu-btn i {
+  pointer-events: none; /* This ensures clicks go to the button, not the icon */
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile nav styles - ensure proper responsive behavior */
+@media (max-width: 991px) {
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Ensure the nav container has proper spacing */
+  .nav-container {
+    gap: var(--space-sm);
+  }
+  
+  /* Fix header container alignment on mobile */
+  .header-container {
+    padding: 0 var(--space-md);
+  }
+}
+
+/* Extra touch-friendly sizing for very small screens */
+@media (max-width: 480px) {
+  .mobile-menu-btn {
+    width: 52px;
+    height: 52px;
+    padding: 14px;
+    font-size: 1.6rem;
+  }
+}
   </style>
   
   <!-- Animations for index.html page -->
@@ -1988,11 +2065,11 @@
       </a>
       
       <div class="nav-container">
-       <!-- Mobile Menu Button -->
-       <button class="mobile-menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Deschide meniul">
-        <i class="fas fa-bars" aria-hidden="true"></i>
-      </button>
-      
+      <!-- Mobile Menu Button FIXED -->
+<button class="mobile-menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Deschide meniul">
+  <i class="fas fa-bars" aria-hidden="true"></i>
+</button>
+
         
         <!-- Main Navigation -->
         <nav class="main-nav" id="main-nav" aria-label="Main navigation">
@@ -2188,15 +2265,18 @@
     <!-- Call to Action -->
     <section class="section cta-section" aria-labelledby="cta-title">
       <div class="container">
-        <div class="cta-content">
-          <h2 id="cta-title">Programează-ți consultația astăzi</h2>
-          <p>Îți punem sănătatea pe primul loc. Contactează-ne pentru o consultație personalizată și îngrijire ginecologică de specialitate.</p>
-          <div class="cta-buttons">
-            <a href="locations.html" class="btn btn-secondary">
-              <i class="fas fa-phone" aria-hidden="true"></i> Progreamază-te acum
-            </a>
-          </div>
+      <div class="""cta-content"></div>
+        <h2 id="cta-title">Programează-ți consultația astăzi</h2>
+        <p style="color: white;">Îți punem sănătatea pe primul loc. Contactează-ne pentru o consultație personalizată și îngrijire ginecologică de specialitate.</p>
+        <div class="cta-buttons">
+        <a href="locations.html" class="btn btn-primary btn-pulse">
+          <i class="fas fa-phone" aria-hidden="true"></i> Programează-te acum
+        </a>
+        <a href="services.html" class="btn btn-secondary">
+          <i class="fas fa-list-ul" aria-hidden="true"></i> Vezi serviciile
+        </a>
         </div>
+      </div>
       </div>
     </section>
   </main>
@@ -2217,89 +2297,41 @@
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h3>Dr. Silvia Dumitrescu</h3>
-          <p>Medic primar obstetrică-ginecologie cu peste 20 ani de experiență, dedicată sănătății și bunăstării femeilor.</p>
-          <div class="social-links" aria-label="Rețele sociale">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-          </div>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Navigare Rapidă</h3>
-          <ul>
-            <li><a href="index.html">Acasă</a></li>
-            <li><a href="about.html">Despre Dr. Dumitrescu</a></li>
-            <li><a href="services.html">Servicii Medicale</a></li>
-            <li><a href="reviews.html">Mărturii Paciente</a></li>
-            <li><a href="locations.html">Programări</a></li>
-            <li><a href="faq.html">Întrebări Frecvente</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Servicii Principale</h3>
-          <ul>
-            <li><a href="services.html#consultatie">Consultație Ginecologică</a></li>
-            <li><a href="services.html#sarcina">Monitorizare Sarcină</a></li>
-            <li><a href="services.html#ecografie">Ecografie Ginecologică</a></li>
-            <li><a href="services.html#mamara">Ecografie Mamară</a></li>
-            <li><a href="services.html#preventie">Prevenție și Screening</a></li>
-            <li><a href="services.html#menopauza">Managementul Menopauzei</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Contact</h3>
-          <ul class="contact-info">
-            <li>
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <span>București, România</span>
-            </li>
-            <li>
-              <i class="fas fa-phone-alt" aria-hidden="true"></i>
-              <a href="tel:+40755123456" itemprop="telephone">+40 755 123 456</a>
-            </li>
-            <li>
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              <a href="mailto:contact@drsilvia.com" itemprop="email">contact@drsilvia.com</a>
-            </li>
-            <li>
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              <span itemprop="openingHours" content="Mo-Fr 09:00-17:00">Luni-Vineri: 9:00-17:00</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2023</span> Dr. Silvia Dumitrescu. Toate drepturile rezervate.</p>
-        
-      </div>
+ <!-- Footer -->
+<footer class="footer">
+  
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year">2025</span> Dr. Silvia Dumitrescu</p>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <!-- JavaScript -->
   <script>
    document.addEventListener('DOMContentLoaded', function() {
-   // Mobile Menu Toggle
-   const menuBtn = document.getElementById('mobile-menu-btn');
-      const mainNav = document.getElementById('main-nav');
-      
-      if (menuBtn && mainNav) {
-        menuBtn.addEventListener('click', function() {
-          const expanded = this.getAttribute('aria-expanded') === 'true';
-          this.setAttribute('aria-expanded', !expanded);
-          mainNav.classList.toggle('active');
-          this.innerHTML = expanded ? '<i class="fas fa-bars" aria-hidden="true"></i>' : '<i class="fas fa-times" aria-hidden="true"></i>';
-        });
-      }
+  // Mobile Menu Toggle - UPDATED
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mainNav = document.getElementById('main-nav');
+
+if (menuBtn && mainNav) {
+  menuBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !expanded);
+    mainNav.classList.toggle('active');
+    
+    // Update icon
+    const icon = this.querySelector('i');
+    if (expanded) {
+      icon.className = 'fas fa-bars';
+    } else {
+      icon.className = 'fas fa-times';
+    }
+  });
+}
       
       // Close menu when clicking outside
       document.addEventListener('click', function(event) {
@@ -2377,28 +2409,7 @@
       });
     });
     
-    // Cookie Consent
-    document.addEventListener('DOMContentLoaded', function() {
-      const cookieConsent = document.getElementById('cookie-consent');
-      const acceptBtn = document.getElementById('accept-cookies');
-      const declineBtn = document.getElementById('decline-cookies');
-      
-      // Check if consent was given
-      if (!localStorage.getItem('cookieConsent')) {
-        cookieConsent.removeAttribute('hidden');
-      }
-      
-      acceptBtn.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        cookieConsent.setAttribute('hidden', true);
-      });
-      
-      declineBtn.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'declined');
-        cookieConsent.setAttribute('hidden', true);
-        // Additional logic for declined cookies could go here
-      });
-    });
+    
     
     // Update copyright year automatically
     document.getElementById('current-year').textContent = new Date().getFullYear();
