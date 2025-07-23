@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4X6TB0NN8T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4X6TB0NN8T');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Întrebări Frecvente | Dr. Silvia Dumitrescu | Obstetrică-Ginecologie</title>
+  <meta name="description" content="Răspunsuri la cele mai frecvente întrebări despre serviciile de obstetrică-ginecologie oferite de Dr. Silvia Dumitrescu în București.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .faq-section {
+      padding: 5rem 0;
+      background: var(--light);
+    }
+
+    .faq-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .faq-category {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
+      border: 1px solid rgba(93, 75, 158, 0.1);
+    }
+
+    .faq-category:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(93, 75, 158, 0.15);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+      padding: 1.2rem;
+      border-radius: var(--radius-md);
+      background: var(--primary);
+    }
+
+    .category-header i {
+      font-size: 2.2rem;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .faq-category:hover .category-header i {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--white);
+    }
+
+    .category-header h2 {
+      margin: 0;
+      font-size: 1.7rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .faq-item {
+      border: 1.5px solid var(--light-gray);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--primary);
+      box-shadow: 0 5px 15px rgba(93, 75, 158, 0.1);
+    }
+
+    .faq-question {
+      padding: 1.2rem 1.5rem;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--secondary);
+      transition: all 0.3s ease;
+      border-radius: 10px;
+    }
+
+    .faq-question:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease-in-out;
+      background: white;
+    }
+
+    .faq-answer.show {
+      padding: 1.5rem;
+      max-height: 600px;
+    }
+    
+    .faq-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 3rem;
+      justify-content: center;
+    }
+    
+    .faq-tag {
+      background: white;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(93, 75, 158, 0.1);
+    }
+    
+    .faq-tag:hover, .faq-tag.active {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(93, 75, 158, 0.2);
+    }
+    
+    .faq-category-title {
+      text-align: center;
+      color: var(--secondary);
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .faq-category-title:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    .faq-answer ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .faq-answer ul li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 0.5rem;
+    }
+    
+    .faq-answer p {
+      line-height: 1.6;
+      color: #444;
+    }
+    
+    .faq-answer strong {
+      color: var(--secondary);
+    }
+
+    /* Animation keyframes and classes */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+      will-change: opacity, transform;
+    }
+    .animate-on-scroll.animate {
+      opacity: 1;
+      transform: translateY(0);
+      animation: fadeInUp 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    @media (max-width: 991px) {
+      .container {
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+      }
+      .faq-section,
+      .faq-categories,
+      .faq-category,
+      .faq-tags {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+      .faq-section {
+        padding: 2rem 0 1rem 0;
+      }
+      .faq-categories {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding: 0;
+      }
+      .faq-category {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        padding: 1.2rem 0.5rem;
+        margin: 0 0 1.2rem 0;
+        border-left: none;
+        border-right: none;
+      }
+      .faq-tags {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        padding: 0;
+      }
+      .faq-tag {
+        width: 100%;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        padding: 1.1rem 0;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(93,75,158,0.08);
+        margin: 0;
+        touch-action: manipulation;
+        user-select: none;
+      }
+    }
+    @media (max-width: 576px) {
+      .faq-section,
+      .faq-categories,
+      .faq-category,
+      .faq-tags {
+        max-width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+      }
+      .faq-category {
+        padding: 1rem 0.2rem;
+      }
+      .faq-tag {
+        font-size: 1.1rem;
+        padding: 1.1rem 0;
+      }
+    }
+  </style>
+  <style>
+    :root {
+      /* Color Palette */
+      --primary: #5d4b9e;
+      --primary-light: #7d6bbf;
+      --primary-dark: #3d2b7e;
+      --secondary: #2c3e50;
+      --accent: #e74c3c;
+      --white: #ffffff;
+      --light: #f8f9fa;
+      --light-gray: #e9ecef;
+      --medium-gray: #ced4da;
+      --dark-gray: #495057;
+      --dark: #212529;
+      
+      /* Typography */
+      --font-main: 'Montserrat', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+      
+      /* Spacing - using rem for accessibility */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-xxl: 3rem;
+      
+      /* Border Radius */
+      --radius-sm: 0.25rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 1rem;
+      --radius-pill: 9999px;
+      
+      /* Shadows */
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+      
+      /* Transitions */
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s ease;
+    }
+    
+    /* Base Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* Account for fixed header */
+    }
+    
+    body {
+      font-family: var(--font-main);
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: var(--light);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    
+    a:hover {
+      color: var(--primary-dark);
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      line-height: 1.2;
+      color: var (--secondary);
+      margin-bottom: var(--space-md);
+      font-weight: 700;
+    }
+    
+    h1, .h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); }
+    h2, .h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+    h3, .h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+    h4, .h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+    h5, .h5 { font-size: clamp(1rem, 1.5vw, 1.25rem); }
+    h6, .h6 { font-size: clamp(0.875rem, 1vw, 1rem); }
+    
+    p, ul, ol {
+      margin-bottom: var(--space-md);
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+    }
+    
+    /* Utility Classes */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    
+    .text-center { text-align: center; }
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
+    
+    .d-flex { display: flex; }
+    .align-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .flex-column { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    
+    .w-100 { width: 100%; }
+    .h-100 { height: 100%; }
+    
+    /* Margin utility classes */
+    .m-0 { margin: 0; }
+    .mt-1 { margin-top: var(--space-xs); }
+    .mt-2 { margin-top: var(--space-sm); }
+    .mt-3 { margin-top: var(--space-md); }
+    .mt-4 { margin-top: var(--space-lg); }
+    .mt-5 { margin-top: var(--space-xl); }
+    
+    .mb-1 { margin-bottom: var(--space-xs); }
+    .mb-2 { margin-bottom: var(--space-sm); }
+    .mb-3 { margin-bottom: var(--space-md); }
+    .mb-4 { margin-bottom: var(--space-lg); }
+    .mb-5 { margin-bottom: var(--space-xl); }
+    
+    /* Padding utility classes */
+    .p-0 { padding: 0; }
+    .py-1 { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+    .py-2 { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+    .py-3 { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+    .py-4 { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+    .py-5 { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 8px;
+      z-index: 1050;
+      text-decoration: none;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+    }
+    
+    /* Section Styles */
+    .section {
+      padding: var(--space-xl) 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-md);
+      position: relative;
+      color: var(--secondary);
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      margin: var(--space-sm) auto 0;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-lg);
+      color: var(--dark-gray);
+      font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    }
+    
+    /* Header & Navigation */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .header.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      padding: 0 1rem;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      z-index: 1001;
+      margin-right: auto;
+    }
+    
+    .logo-img {
+      width: 45px;
+      height: 45px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all var(--transition-normal);
+    }
+    
+    .logo:hover .logo-img {
+      transform: scale(1.05);
+      background: var(--primary-dark);
+    }
+    
+    .logo-text {
+      font-family: var(--font-heading);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 700;
+      color: var(--secondary);
+    }
+    
+    /* Language Switcher */
+    .language-switcher {
+      display: flex;
+      gap: 5px;
+      margin-left: auto;
+      margin-right: var(--space-lg);
+      z-index: 1001;
+    }
+    
+    .language-btn {
+      background: none;
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      cursor: pointer;
+      padding: var(--space-xs) var(--space-sm);
+      font-size: 0.875rem;
+      transition: all var(--transition-fast);
+      min-width: 40px;
+      min-height: 35px;
+    }
+    
+    .language-btn:hover {
+      background: var(--primary-light);
+      color: var(--white);
+    }
+    
+    .language-btn.active {
+      background: var(--primary);
+      color: var(--white);
+    }
+    
+    /* Main Navigation */
+    .nav-container {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+    
+    .main-nav {
+      display: flex;
+    }
+    
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      list-style: none;
+      margin: 0;
+    }
+    
+    .nav-link {
+      position: relative;
+      font-weight: 600;
+      font-size: clamp(0.9rem, 1.1vw, 1rem);
+      padding: var(--space-md) var(--space-xs);
+      color: var(--secondary);
+      transition: color var(--transition-fast);
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: width var(--transition-normal);
+    }
+    
+    .nav-link:hover, 
+    .nav-link.active {
+      color: var(--primary);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    
+    /* Mobile Navigation */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+      padding: var(--space-xs);
+      width: 44px;
+      height: 44px;
+      transition: color var(--transition-fast);
+      margin-left: auto;
+    }
+    
+    .mobile-menu-btn:hover,
+    .mobile-menu-btn:focus {
+      color: var(--primary);
+    }
+    
+    /* Mobile nav styles */
+    @media (max-width: 991px) {
+      .header-container {
+        padding: 1.5rem;
+      }
+      
+      .logo {
+        margin-right: 0;
+      }
+      
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+      }
+      
+      .main-nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        padding: var(--space-lg);
+        transform: translateX(-100%);
+        transition: transform var(--transition-normal);
+        overflow-y: auto;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      
+      .main-nav.active {
+        transform: translateX(0);
+        box-shadow: var(--shadow-lg);
+      }
+      
+      .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--space-sm);
+      }
+      
+      .nav-item {
+        width: 100%;
+      }
+      
+      .nav-link {
+        display: block;
+        width: 100%;
+        padding: var(--space-md);
+        text-align: center;
+        border-radius: var(--radius-md);
+      }
+      
+      .nav-link::after {
+        display: none;
+      }
+      
+      .nav-link:hover, 
+      .nav-link.active {
+        background: rgba(93, 75, 158, 0.1);
+      }
+      
+      .language-switcher {
+        margin-right: var(--space-md);
+        margin-left: 0; 
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .header-container {
+        padding: 0 1rem;
+      }
+      
+      .logo-text {
+        font-size: 1rem;
+      }
+      
+      .language-switcher {
+        margin-right: var(--space-sm);
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+   <!-- Header -->
+   <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="Dr. Silvia Dumitrescu homepage">
+        <img src="images/logo.png" alt="Dr. Silvia Dumitrescu Logo" class="logo-img" style="background: transparent;" />
+        <div class="logo-text">Dr. Silvia Dumitrescu</div>
+      </a>
+      
+      <div class="nav-container">
+        <!-- Language Switcher -->
+        
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Deschide meniul">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+        
+        <!-- Main Navigation -->
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">Acasă</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">Despre</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">Servicii</a></li>
+            <li class="nav-item"><a href="reviews.html" class="nav-link">Recomandări</a></li>
+            <li class="nav-item"><a href="locations.html" class="nav-link">Programări</a></li>
+            <li class="nav-item"><a href="faq.html" class="nav-link active">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+
+  
+   <!-- Main Content -->
+   <main id="main-content">
+    <!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="header-content">
+
+      <div class="header-main">
+        <div class="header-badge">
+          <i class="fas fa-question-circle"></i>
+          <span>Răspunsuri Complete și Detaliate</span>
+        </div>
+        
+        <h1 class="header-title">
+          <span class="title-accent">Întrebări</span> Frecvente
+        </h1>
+        
+        <p class="header-subtitle"></p>
+          Găsește răspunsuri la cele mai <strong>importante întrebări</strong> despre serviciile de 
+          obstetrică-ginecologie. Informații complete pentru decizii în cunoștință de cauză.
+        </p>
+
+
+       
+    
+    <!-- Floating elements for visual enhancement -->
+    <div class="header-decoration">
+      <div class="floating-element floating-1">
+        <i class="fas fa-question-circle"></i>
+      </div>
+      <div class="floating-element floating-2">
+        <i class="fas fa-lightbulb"></i>
+      </div>
+      <div class="floating-element floating-3">
+        <i class="fas fa-info-circle"></i>
+      </div>
+    </div>
+  </div>
+</section></div>
+
+ <style>
+ /* Enhanced Page Header Styles */
+ .page-header {
+   background: linear-gradient(135deg, 
+     rgba(93, 75, 158, 0.95) 0%, 
+     rgba(125, 107, 191, 0.9) 50%, 
+     rgba(93, 75, 158, 0.95) 100%
+   ), url('images/medical-bg-pattern.jpg') center/cover;
+   color: var(--white);
+   padding: 120px 0 80px;
+   text-align: center;
+   margin-bottom: 0;
+   position: relative;
+   overflow: hidden;
+   min-height: 60vh;
+   display: flex;
+   align-items: center;
+ }
+
+ .page-header::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>') repeat;
+   pointer-events: none;
+ }
+
+ .header-content {
+   position: relative;
+   z-index: 2;
+   max-width: 900px;
+   margin: 0 auto;
+ }
+
+ /* Breadcrumb Navigation */
+ .header-breadcrumb {
+   margin-bottom: var(--space-lg);
+   opacity: 0;
+   animation: slideInDown 0.6s ease-out 0.2s forwards;
+ }
+
+ .breadcrumb-list {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   font-size: 0.9rem;
+ }
+
+ .breadcrumb-link {
+   color: rgba(255, 255, 255, 0.8);
+   text-decoration: none;
+   transition: all var(--transition-fast);
+   padding: var(--space-xs) var(--space-sm);
+   border-radius: var(--radius-sm);
+ }
+
+ .breadcrumb-link:hover {
+   color: var(--white);
+   background: rgba(255, 255, 255, 0.1);
+ }
+
+ .breadcrumb-separator {
+   color: rgba(255, 255, 255, 0.6);
+   margin: 0 var(--space-sm);
+ }
+
+ .breadcrumb-current {
+   color: var(--white);
+   font-weight: 600;
+ }
+
+ /* Header Main Content */
+ .header-main {
+   opacity: 0;
+   animation: slideInUp 0.8s ease-out 0.4s forwards;
+ }
+
+ /* Header Badge */
+ .header-badge {
+   display: inline-flex;
+   align-items: center;
+   gap: var(--space-sm);
+   background: rgba(255, 255, 255, 0.15);
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   border-radius: var(--radius-pill);
+   padding: var(--space-sm) var(--space-lg);
+   margin-bottom: var(--space-lg);
+   font-size: 0.9rem;
+   font-weight: 600;
+   color: var(--white);
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+   transition: all var(--transition-normal);
+ }
+
+ .header-badge:hover {
+   transform: translateY(-2px);
+   background: rgba(255, 255, 255, 0.2);
+ }
+
+ .header-badge i {
+   font-size: 1rem;
+   color: #FFD700;
+ }
+
+ /* Enhanced Title */
+ .header-title {
+   font-size: clamp(2.5rem, 6vw, 4rem);
+   font-weight: 700;
+   margin-bottom: var(--space-lg);
+   letter-spacing: -0.02em;
+   line-height: 1.1;
+   position: relative;
+ }
+
+ .title-accent {
+   background: linear-gradient(135deg, #FFD700, #FFA726);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+   position: relative;
+ }
+
+ .title-accent::after {
+   content: '';
+   position: absolute;
+   bottom: -5px;
+   left: 0;
+   right: 0;
+   height: 3px;
+   background: linear-gradient(135deg, #FFD700, #FFA726);
+   border-radius: 2px;
+   transform: scaleX(0);
+   animation: expandLine 1s ease-out 1s forwards;
+ }
+
+ /* Enhanced Subtitle */
+ .header-subtitle {
+   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+   line-height: 1.6;
+   margin-bottom: var(--space-xl);
+   opacity: 0.95;
+   max-width: 600px;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .header-subtitle strong {
+   color: #FFD700;
+   font-weight: 600;
+ }
+
+ /* Header Highlights */
+ .header-highlights {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+   gap: var(--space-lg);
+   margin-bottom: var(--space-xl);
+   max-width: 700px;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .highlight-item {
+   background: rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   border-radius: 15px;
+   padding: var(--space-lg);
+   display: flex;
+   align-items: center;
+   gap: var(--space-md);
+   transition: all var(--transition-normal);
+   opacity: 0;
+   transform: translateY(20px);
+   animation: slideInUp 0.6s ease-out forwards;
+ }
+
+ .highlight-item:nth-child(1) { animation-delay: 0.6s; }
+ .highlight-item:nth-child(2) { animation-delay: 0.8s; }
+ .highlight-item:nth-child(3) { animation-delay: 1s; }
+
+ .highlight-item:hover {
+   transform: translateY(-5px);
+   background: rgba(255, 255, 255, 0.15);
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+ }
+
+ .highlight-icon {
+   width: 50px;
+   height: 50px;
+   background: linear-gradient(135deg, #FFD700, #FFA726);
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.2rem;
+   color: var(--white);
+   flex-shrink: 0;
+   box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+ }
+
+ .highlight-text {
+   display: flex;
+   flex-direction: column;
+   gap: 2px;
+ }
+
+ .highlight-label {
+   font-size: 0.85rem;
+   opacity: 0.9;
+   font-weight: 500;
+ }
+
+ .highlight-value {
+   font-size: 1rem;
+   font-weight: 700;
+   color: #FFD700;
+ }
+
+ /* Header CTA Buttons */
+ .header-cta {
+   display: flex;
+   gap: var(--space-md);
+   justify-content: center;
+   flex-wrap: wrap;
+   opacity: 0;
+   animation: slideInUp 0.6s ease-out 1.2s forwards;
+ }
+
+ .btn-header-primary,
+ .btn-header-secondary {
+   display: inline-flex;
+   align-items: center;
+   gap: var(--space-sm);
+   padding: var(--space-md) var(--space-xl);
+   border-radius: var(--radius-pill);
+   font-weight: 600;
+   font-size: 1rem;
+   text-decoration: none;
+   transition: all var(--transition-normal);
+   position: relative;
+   overflow: hidden;
+   min-width: 180px;
+   justify-content: center;
+   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+ }
+
+ .btn-header-primary {
+   background: linear-gradient(135deg, #FFD700, #FFA726);
+   color: var(--secondary);
+   border: 2px solid transparent;
+ }
+
+ .btn-header-primary:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+   color: var(--secondary);
+ }
+
+ .btn-header-secondary {
+   background: rgba(255, 255, 255, 0.1);
+   color: var(--white);
+   border: 2px solid rgba(255, 255, 255, 0.3);
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+ }
+
+ .btn-header-secondary:hover {
+   background: rgba(255, 255, 255, 0.2);
+   border-color: rgba(255, 255, 255, 0.5);
+   transform: translateY(-3px);
+   color: var(--white);
+ }
+
+ /* Floating Decorative Elements */
+ .header-decoration {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   pointer-events: none;
+   overflow: hidden;
+ }
+
+ .floating-element {
+   position: absolute;
+   color: rgba(255, 255, 255, 0.1);
+   font-size: 2rem;
+   animation: float 6s ease-in-out infinite;
+ }
+
+ .floating-1 {
+   top: 20%;
+   left: 10%;
+   animation-delay: 0s;
+ }
+
+ .floating-2 {
+   top: 60%;
+   right: 15%;
+   animation-delay: 2s;
+ }
+
+ .floating-3 {
+   bottom: 20%;
+   left: 20%;
+   animation-delay: 4s;
+ }
+
+ /* Animations */
+ @keyframes slideInDown {
+   from {
+     opacity: 0;
+     transform: translateY(-30px);
+   }
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ @keyframes slideInUp {
+   from {
+     opacity: 0;
+     transform: translateY(30px);
+   }
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ @keyframes expandLine {
+   from {
+     transform: scaleX(0);
+   }
+   to {
+     transform: scaleX(1);
+   }
+ }
+
+ @keyframes float {
+   0%, 100% {
+     transform: translateY(0px) rotate(0deg);
+   }
+   33% {
+     transform: translateY(-20px) rotate(5deg);
+   }
+   66% {
+     transform: translateY(10px) rotate(-3deg);
+   }
+ }
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+   .page-header {
+     padding: 100px 0 60px;
+     min-height: 50vh;
+   }
+   
+   .header-highlights {
+     grid-template-columns: 1fr;
+     gap: var(--space-md);
+   }
+   
+   .highlight-item {
+     padding: var(--space-md);
+   }
+   
+   .header-cta {
+     flex-direction: column;
+     align-items: center;
+   }
+   
+   .btn-header-primary,
+   .btn-header-secondary {
+     width: 100%;
+     max-width: 280px;
+   }
+   
+   .floating-element {
+     display: none;
+   }
+ }
+
+ @media (max-width: 480px) {
+   .header-badge {
+     padding: var(--space-xs) var(--space-md);
+     font-size: 0.85rem;
+   }
+   
+   .highlight-item {
+     flex-direction: column;
+     text-align: center;
+     gap: var(--space-sm);
+   }
+   
+   .highlight-text {
+     align-items: center;
+   }
+ }
+
+ /* Add smooth scrolling for internal links */
+ html {
+   scroll-behavior: smooth;
+ }
+
+ /* Add focus styles for accessibility */
+ .breadcrumb-link:focus,
+ .btn-header-primary:focus,
+ .btn-header-secondary:focus {
+   outline: 3px solid rgba(255, 215, 0, 0.5);
+   outline-offset: 2px;
+ }
+ </style>
+
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <!-- FAQ Tags -->
+    
+
+      <!-- FAQ Categories -->
+      <div class="faq-categories">
+        <!-- Consultații -->
+        <div class="faq-category" data-category="consultations">
+          <div class="category-header">
+            <i class="fas fa-stethoscope"></i>
+            <h2>Consultații</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce include o consultație standard?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>O consultație standard include:</p>
+                <ul>
+                  <li>Anamneza completă (istoricul medical)</li>
+                  <li>Examinare clinică</li>
+                  <li>Ecografie transvaginală sau abdominală (când este necesară)</li>
+                  <li>Interpretarea analizelor aduse</li>
+                  <li>Discuție despre diagnostic și opțiuni terapeutice</li>
+                  <li>Plan de tratament personalizat</li>
+                  <li>Recomandări pentru investigații ulterioare (dacă este cazul)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Cât durează o consultație?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>O consultație durează în medie 30-45 de minute, în funcție de complexitatea cazului și necesitățile pacientei. Pentru prima consultație, alocăm de obicei mai mult timp (până la 60 de minute) pentru a avea posibilitatea unei evaluări complete.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Trebuie să mă pregătesc special pentru o consultație ginecologică?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Pentru o consultație ginecologică standard, se recomandă:</p>
+                <ul>
+                  <li>Să evitați raporturile sexuale cu 24-48 de ore înainte, în special dacă urmează să faceți un test Papanicolau</li>
+                  <li>Să nu folosiți dușuri vaginale sau tratamente intravaginale cu 2-3 zile înainte</li>
+                  <li>Să aduceți rezultate ale investigațiilor anterioare (analize, ecografii, etc.)</li>
+                  <li>Să vă notați data ultimei menstruații</li>
+                  <li>Să veniți cu o listă de întrebări sau preocupări pentru a nu uita aspecte importante</li>
+                </ul>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Este dureroasă examinarea ginecologică?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Examinarea ginecologică poate provoca un ușor disconfort, dar în general nu ar trebui să fie dureroasă. Folosim instrumente de dimensiuni adecvate și tehnici blânde pentru a minimiza orice disconfort. Comunicați orice durere resimțită în timpul examinării, deoarece acest lucru poate fi relevant din punct de vedere diagnostic. Pentru pacientele anxioase sau la prima lor consultație, luăm timp suplimentar pentru a explica fiecare etapă și a asigura relaxarea.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce investigații sunt recomandate pentru controlul anual?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Pentru controlul ginecologic anual, în funcție de vârstă și factori de risc, recomandăm de obicei:</p>
+                <ul>
+                  <li>Examen clinic complet</li>
+                  <li>Test Papanicolau (la 1-3 ani, conform recomandărilor actuale)</li>
+                  <li>Ecografie transvaginală</li>
+                  <li>Test HPV (în funcție de vârstă și istorie)</li>
+                  <li>Analize hormonal (la indicație)</li>
+                  <li>Mamografie sau ecografie mamară (în funcție de vârstă)</li>
+                  <li>Teste pentru infecții cu transmitere sexuală (la indicație)</li>
+                </ul>
+                <p>Recomandările sunt personalizate pentru fiecare pacientă în funcție de nevoile individuale.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sarcină -->
+        <div class="faq-category" data-category="pregnancy">
+          <div class="category-header">
+            <i class="fas fa-baby"></i>
+            <h2>Sarcină</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">
+                Când trebuie să fac prima ecografie?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Prima ecografie se recomandă între săptămânile 7-8 de sarcină (calculată de la prima zi a ultimei menstruații). În această etapă putem:</p>
+                <ul>
+                  <li>Confirma sarcina intrauterină</li>
+                  <li>Verifica activitatea cardiacă a embrionului</li>
+                  <li>Evalua dezvoltarea embrionară inițială</li>
+                  <li>Detecta eventuale sarcini multiple</li>
+                  <li>Estima vârsta gestațională</li>
+                </ul>
+                <p>Pentru pacientele cu istoric de complicații sau sarcini cu risc crescut, putem recomanda o ecografie mai timpurie.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce analize sunt necesare în sarcină?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Analizele recomandate în timpul sarcinii includ:</p>
+                <p><strong>Trimestrul I:</strong></p>
+                <ul>
+                  <li>Hemoleucogramă completă</li>
+                  <li>Grup sanguin și Rh</li>
+                  <li>Teste pentru infecții (TORCH, HIV, hepatită B și C, sifilis)</li>
+                  <li>Glicemie și hemoglobină glicozilată</li>
+                  <li>Examen complet de urină și urocultură</li>
+                  <li>Test combinat pentru anomalii cromozomiale (între săptămânile 11-13)</li>
+                </ul>
+                <p><strong>Trimestrul II:</strong></p>
+                <ul>
+                  <li>Hemoleucogramă</li>
+                  <li>Glicemie și test de toleranță la glucoză (între săptămânile 24-28)</li>
+                  <li>Examen de urină</li>
+                  <li>Ecografie morfologică detaliată (între săptămânile 20-24)</li>
+                </ul>
+                <p><strong>Trimestrul III:</strong></p>
+                <ul>
+                  <li>Hemoleucogramă</li>
+                  <li>Teste hepatice și renale</li>
+                  <li>Examen de urină</li>
+                  <li>Streptococ de grup B (între săptămânile 35-37)</li>
+                  <li>Ecografie pentru evaluarea creșterii fetale</li>
+                </ul>
+                <p>Recomandările pot varia în funcție de factori individuali și istoric medical.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Cât de des trebuie să fac controale pe parcursul sarcinii?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Frecvența recomandată a controalelor pentru o sarcină normală este:</p>
+                <ul>
+                  <li><strong>Săptămânile 1-28:</strong> O dată la 4 săptămâni</li>
+                  <li><strong>Săptămânile 28-36:</strong> O dată la 2-3 săptămâni</li>
+                  <li><strong>Săptămânile 36-naștere:</strong> Săptămânal</li>
+                </ul>
+                <p>Pentru sarcinile cu risc crescut sau cu complicații, programul controalelor va fi personalizat și poate implica vizite mai frecvente. Este important să respectați programul recomandat pentru monitorizarea adecvată a sarcinii.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Când ar trebui să contactez medicul între programări?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Contactați medicul imediat dacă prezentați:</p>
+                <ul>
+                  <li>Sângerare vaginală</li>
+                  <li>Dureri abdominale intense sau persistente</li>
+                  <li>Scurgeri de lichid amniotic</li>
+                  <li>Contracții regulate înainte de 37 de săptămâni</li>
+                  <li>Reducerea semnificativă a mișcărilor fetale</li>
+                  <li>Dureri de cap severe sau persistente</li>
+                  <li>Tulburări de vedere</li>
+                  <li>Umflarea brusca a feței, mâinilor sau picioarelor</li>
+                  <li>Febră peste 38°C</li>
+                  <li>Simptome de infecție urinară</li>
+                </ul>
+                <p>În caz de urgență, mergeți direct la camera de gardă a maternității.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce metode de naștere sunt disponibile?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Opțiunile pentru naștere includ:</p>
+                <ul>
+                  <li><strong>Naștere naturală:</strong> Fără intervenții medicale, cu tehnici de management al durerii naturale</li>
+                  <li><strong>Naștere vaginală cu analgezie epidurală:</strong> Oferă control asupra durerii, permițând o experiență mai confortabilă</li>
+                  <li><strong>Naștere asistată instrumental:</strong> Cu forceps sau vacuum în situații specifice</li>
+                  <li><strong>Cezariană planificată:</strong> Recomandată în anumite situații medicale sau la cerere, după o discuție completă despre beneficii și riscuri</li>
+                  <li><strong>Cezariană de urgență:</strong> Efectuată când apar complicații în timpul travaliului</li>
+                </ul>
+                <p>Vom discuta opțiunile disponibile și vom elabora împreună un plan de naștere care să respecte preferințele dumneavoastră, ținând cont de factorii medicali.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More FAQ Categories -->
+      <div class="faq-categories">
+        <!-- Programări -->
+        <div class="faq-category" data-category="appointments">
+          <div class="category-header">
+            <i class="fas fa-calendar-check"></i>
+            <h2>Programări</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">
+                Cum pot face o programare?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Puteți face o programare prin mai multe metode:</p>
+                <ul>
+                  <li><strong>Telefonic:</strong> Sunați la numerele afișate în secțiunea Contact între orele 9:00-18:00, de luni până vineri</li>
+                  <li><strong>Online:</strong> Completați formularul de programare de pe site sau trimiteți un email</li>
+                  <li><strong>Personal:</strong> Direct la recepția clinicilor partenere</li>
+                  <li><strong>WhatsApp:</strong> Trimiteți un mesaj la numărul dedicat pentru programări</li>
+                </ul>
+                <p>Pentru o programare eficientă, vă rugăm să menționați motivul consultației și, dacă sunteți pacientă nouă sau efectuați un control de rutină.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce fac dacă întârzii la programare?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Dacă anticipați că veți întârzia:</p>
+                <ul>
+                  <li>Vă rugăm să ne anunțați telefonic cât mai curând posibil</li>
+                  <li>Pentru întârzieri de până la 15 minute, în general, putem ajusta programul</li>
+                  <li>Pentru întârzieri mai mari de 15 minute, în funcție de programul zilei, consultația poate fi scurtată sau va trebui reprogramată</li>
+                </ul>
+                <p>Respectarea programării ne ajută să oferim servicii de calitate tuturor pacientelor și să evităm timpul de așteptare prelungit.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce documente trebuie să aduc la prima consultație?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Pentru prima consultație, vă rugăm să aduceți:</p>
+                <ul>
+                  <li>Act de identitate (carte de identitate sau pașaport)</li>
+                  <li>Card de asigurare de sănătate si bilet de trimitere de la medicul de familie (dacă doriți decontare)</li>
+                  <li>Rezultatele investigațiilor anterioare (analize, ecografii, scrisori medicale)</li>
+                  <li>Lista medicamentelor pe care le luați în prezent</li>
+                  <li>Istoricul medical relevant (fișe de externare, rapoarte medicale)</li>
+                </ul>
+               
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Cum pot anula sau reprograma o consultație?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Pentru anularea sau reprogramarea unei consultații:</p>
+                <ul>
+                  <li>Contactați-ne telefonic sau prin email cu cel puțin 24 de ore înainte de programare</li>
+                  <li>Precizați numele, data programării inițiale și motivul anulării/reprogramării</li>
+                  <li>Pentru reprogramare, menționați câteva intervale orare alternative care v-ar conveni</li>
+                </ul>
+                <p>Anulările cu mai puțin de 24 de ore înainte pot atrage o taxă de reprogramare, cu excepția situațiilor de urgență. Apreciem înțelegerea dumneavoastră, deoarece acest timp ar fi putut fi oferit altor paciente care au nevoie de consultație.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Este posibilă consultația online/la distanță?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Da, oferim consultații online pentru anumite situații:</p>
+                <ul>
+                  <li>Interpretarea rezultatelor analizelor sau a investigațiilor</li>
+                  <li>Monitorizarea tratamentelor în curs</li>
+                  <li>Întrebări de urmărire după o consultație fizică</li>
+                  <li>Sfaturi generale și recomandări</li>
+                </ul>
+                <p>Consultațiile online se desfășoară prin platforme securizate de telemedicină. Totuși, pentru examinări fizice, ecografii sau proceduri, este necesară prezența în cabinet. În urma consultației online, putem evalua dacă este necesară o programare în persoană.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proceduri -->
+        <div class="faq-category" data-category="procedures">
+          <div class="category-header">
+            <i class="fas fa-procedures"></i>
+            <h2>Proceduri</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">
+                Cum se realizează testul Papanicolau și este dureros?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Testul Papanicolau este o procedură simplă care implică recoltarea unor celule de la nivelul colului uterin. Procedura durează doar câteva minute și implică:</p>
+                <ul>
+                  <li>Introducerea unui specul vaginal pentru vizualizarea colului uterin</li>
+                  <li>Recoltarea blândă a celulelor cu ajutorul unei periuțe speciale</li>
+                  <li>Plasarea celulelor pe o lamă sau într-un lichid special pentru analiză</li>
+                </ul>
+                <p>Majoritatea pacientelor simt un disconfort minim, rareori durere. Procedura poate provoca o ușoară senzație de presiune sau o crampă ușoară de scurtă durată. Relaxarea în timpul procedurii reduce semnificativ disconfortul.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce este colposcopia și când este recomandată?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Colposcopia este o procedură diagnostică care permite examinarea detaliată a colului uterin, vaginului și vulvei cu ajutorul unui microscop special numit colposcop. Procedura:</p>
+                <ul>
+                  <li>Oferă o vizualizare mărită și iluminată a țesuturilor</li>
+                  <li>Poate include aplicarea de soluții speciale pentru evidențierea zonelor anormale</li>
+                  <li>Permite efectuarea unor biopsii țintite din zonele suspecte</li>
+                </ul>
+                <p>Colposcopia este recomandată în următoarele situații:</p>
+                <ul>
+                  <li>Test Papanicolau anormal</li>
+                  <li>Test HPV pozitiv pentru tulpini cu risc înalt</li>
+                  <li>Sângerări anormale sau spotting postcoital</li>
+                  <li>Leziuni vizibile sau suspecte la nivelul colului uterin</li>
+                  <li>Monitorizarea unor afecțiuni cervicale cunoscute</li>
+                </ul>
+                    <p>Procedura durează aproximativ 10-15 minute și poate cauza un disconfort minor, similar cu cel din timpul unui examen ginecologic standard.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce pregătire este necesară pentru ecografia transvaginală?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Pentru ecografia transvaginală, nu este necesară o pregătire specială, însă se recomandă:</p>
+                <ul>
+                  <li>Să aveți vezica goală (spre deosebire de ecografia abdominală)</li>
+                  <li>Să informați medicul dacă sunteți în perioada menstruală</li>
+                  <li>Să nu folosiți produse intravaginale cu 24 de ore înainte</li>
+                </ul>
+                <p>Procedura implică introducerea unei sonde ecografice speciale în vagin, acoperită cu un prezervativ medical și lubrifiant. Sonda este subțire și introdusă cu blândețe, cauzând doar un disconfort minim. Imaginile obținute permit vizualizarea detaliată a uterului, ovarelor și structurilor pelvine adiacente.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce este histerosonografia și în ce cazuri se recomandă?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Histerosonografia este o procedură minim invazivă care permite vizualizarea directă a interiorului cavității uterine si a trompelor uterine prin intermediul unui instrument optic subțire (histeroscop). Procedura:</p>
+                <ul>
+                  <li>Poate fi diagnostică (doar pentru vizualizare) sau operatorie (permite și intervenții)</li>
+                  <li>Se realizează de obicei cu anestezie locală sau sedare conștientă</li>
+                  <li>Durează între 15-45 minute, în funcție de complexitate</li>
+                </ul>
+                <p>Hiisterosonografia este recomandată în următoarele situații:</p>
+                <ul>
+                  <li>Sângerări uterine anormale</li>
+                  <li>Infertilitate sau avorturi repetate</li>
+                  <li>Suspiciune de polipi sau fibroame submucoase</li>
+                  <li>Anomalii uterine detectate la ecografie</li>
+                  <li>Extragerea dispozitivelor intrauterine pierdute</li>
+                  <li>Ablație endometrială pentru menometroragii</li>
+                </ul>
+                <p>Recuperarea este rapidă, majoritatea pacientelor putând relua activitățile normale în aceeași zi sau a doua zi după procedură.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Cum se efectuează montarea unui DIU (dispozitiv intrauterin)?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Montarea unui DIU (dispozitiv intrauterin) este o procedură relativ simplă care se realizează în cabinet, cu anestezie locala. Pașii procedurii includ:</p>
+                <ul>
+                  <li>Examinare ginecologică prealabilă pentru a evalua poziția uterului</li>
+                  <li>Curățarea colului uterin cu o soluție antiseptică</li>
+                  <li>Măsurarea cavității uterine cu un instrument special (histerometru)</li>
+                  <li>Introducerea DIU-ului prin canalul cervical în cavitatea uterină folosind un aplicator steril</li>
+                  <li>Verificarea poziției prin ecografie după montare</li>
+                </ul>
+                <p>Procedura durează aproximativ 5-10 minute și poate provoca crampe moderate sau disconfort. Este recomandată administrarea preventivă de antiinflamatoare pentru a reduce disconfortul. După montare, DIU-ul cu cupru oferă protecție contraceptivă până la 10 ani, iar cel hormonal între 3-7 ani, în funcție de tip.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final FAQ Categories -->
+      <div class="faq-categories">
+        <!-- Prevenție -->
+        <div class="faq-category" data-category="prevention">
+          <div class="category-header">
+            <i class="fas fa-shield-alt"></i>
+            <h2>Prevenție</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce investigații sunt recomandate pentru prevenția cancerului de col uterin?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Pentru prevenția eficientă a cancerului de col uterin, se recomandă:</p>
+                <ul>
+                  <li><strong>Testul Papanicolau:</strong> Cel mai important test de screening, recomandat la intervale de 1-3 ani, în funcție de vârstă și factori de risc</li>
+                  <li><strong>Testarea HPV:</strong> Recomandată pentru femeile peste 25 de ani, pentru detectarea tulpinilor cu risc oncogenic înalt</li>
+                  <li><strong>Colposcopia:</strong> În cazul rezultatelor anormale ale testelor anterioare</li>
+                  <li><strong>Vaccinarea HPV:</strong> Ideală pentru fetele și femeile tinere (9-26 ani), dar benefică și pentru femei până la 45 de ani</li>
+                </ul>
+                <p>Screeningul regulat poate preveni până la 93% din cazurile de cancer cervical prin detectarea și tratarea leziunilor precanceroase înainte de a evolua. Frecvența recomandată a testelor variază în funcție de vârstă, istoric medical și rezultatele anterioare.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Care sunt semnele care ar trebui să mă îngrijoreze?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Următoarele simptome ar trebui să vă determine să consultați un medic ginecolog cât mai curând:</p>
+                <ul>
+                  <li>Sângerări neregulate sau între menstruații</li>
+                  <li>Sângerări postmenopauzale (orice sângerare după menopauză)</li>
+                  <li>Sângerări după contactul sexual</li>
+                  <li>Dureri pelvine persistente sau recurente</li>
+                  <li>Dureri în timpul actului sexual (dispareunie)</li>
+                  <li>Secreții vaginale anormale (modificări de culoare, miros, consistență)</li>
+                  <li>Mâncărimi sau iritații vulvare care persistă</li>
+                  <li>Schimbări vizibile la nivelul vulvei sau vaginului</li>
+                  <li>Nevoia frecventă sau dureroasă de a urina</li>
+                  <li>Simptome mamare: noduli, scurgeri din mamelon, modificări ale pielii</li>
+                </ul>
+                <p>Aceste simptome nu indică neapărat o afecțiune gravă, dar necesită evaluare medicală pentru diagnosticarea corectă și tratament adecvat.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                De la ce vârstă ar trebui să încep controalele ginecologice?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Se recomandă începerea controalelor ginecologice în următoarele situații:</p>
+                <ul>
+                  <li><strong>Prima consultație:</strong> La vârsta de 15-16 ani sau mai devreme dacă există probleme specifice (dureri menstruale severe, menstruații neregulate, întârzieri în apariția menstruației)</li>
+                  <li><strong>Examinare completă:</strong> După debutul vieții sexuale sau cel târziu la 21 de ani</li>
+                  <li><strong>Primul test Papanicolau:</strong> La 21 de ani sau după trei ani de la debutul vieții sexuale</li>
+                </ul>
+                <p>Prima consultație se concentrează pe educație, prevenție și stabilirea unei relației de încredere medic-pacient. Examinarea fizică completă poate fi amânată dacă pacienta nu este activă sexual și nu prezintă simptome. Este important de menționat că adolescentele pot veni singure la consultație, confidențialitatea fiind respectată conform legii.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce măsuri pot lua pentru sănătatea reproductivă?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Pentru menținerea unei sănătăți reproductive optime, se recomandă:</p>
+                <ul>
+                  <li><strong>Controale regulate:</strong> Consultații ginecologice anuale și testele de screening recomandate</li>
+                  <li><strong>Practici sexuale sigure:</strong> Utilizarea prezervativului pentru prevenirea infecțiilor cu transmitere sexuală</li>
+                  <li><strong>Igienă intimă adecvată:</strong> Utilizarea produselor blânde, cu pH adaptat zonei intime</li>
+                  <li><strong>Contracepție adecvată:</strong> Alegerea metodei contraceptive potrivite nevoilor personale</li>
+                  <li><strong>Nutriție echilibrată:</strong> O dietă bogată în antioxidanți, vitamina D, calciu și acizi grași omega-3</li>
+                  <li><strong>Activitate fizică regulată:</strong> Minim 150 minute de activitate moderată săptămânal</li>
+                  <li><strong>Gestionarea stresului:</strong> Stresul cronic poate afecta ciclul menstrual și fertilitatea</li>
+                  <li><strong>Evitarea toxinelor:</strong> Reducerea consumului de alcool, renunțarea la fumat</li>
+                  <li><strong>Menținerea unei greutăți sănătoase:</strong> Atât obezitatea cât și subponderalitatea afectează fertilitatea</li>
+                </ul>
+                <p>Educația despre sănătatea reproductivă și comunicarea deschisă cu medicul ginecolog sunt esențiale pentru prevenția și detectarea timpurie a potențialelor probleme.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Ce reprezintă planificarea preconcepțională și când este recomandat să fie inițiată?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Planificarea preconcepțională reprezintă setul de măsuri medicale și de lifestyle care optimizează sănătatea înainte de concepție pentru a crește șansele unei sarcini sănătoase. Aceasta include:</p>
+                <ul>
+                  <li>Evaluare medicală completă pentru identificarea factorilor de risc</li>
+                  <li>Optimizarea afecțiunilor medicale preexistente</li>
+                  <li>Verificarea statusului vaccinal și completarea vaccinărilor necesare</li>
+                  <li>Evaluarea medicației curente și ajustarea acesteia dacă este necesar</li>
+                  <li>Testare pentru infecții cu transmitere sexuală</li>
+                  <li>Inițierea suplimentării cu acid folic (minim 400 mcg zilnic)</li>
+                  <li>Optimizarea stilului de viață: nutriție, activitate fizică, renunțarea la fumat și alcool</li>
+                </ul>
+                <p>Ideal, planificarea preconcepțională ar trebui inițiată cu 3-6 luni înainte de încercarea de concepție. Este recomandată pentru toate cuplurile care își doresc o sarcină, dar este esențială pentru femeile cu afecțiuni medicale cronice, istoric de complicații obstetricale anterioare sau vârsta peste 35 de ani.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Generale -->
+        <div class="faq-category" data-category="general">
+          <div class="category-header">
+            <i class="fas fa-info-circle"></i>
+            <h2>Generale</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">
+                Sunt acoperite serviciile de asigurarea medicală?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Acoperirea serviciilor prin asigurare variază în funcție de tipul de asigurare pe care îl dețineți:</p>
+                <ul>
+                  <li><strong>Asigurarea de stat (CNAS):</strong> Acoperă anumite consultații și investigații, în limita plafonului contractat cu Casa de Asigurări</li>
+                  <li><strong>Asigurări private:</strong> În funcție de pachetul deținut, pot acoperi integral sau parțial consultațiile, investigațiile și anumite proceduri</li>
+                </ul>
+                <p>Clinicile în care îmi desfășor activitatea colaborează cu principalele companii de asigurări private din România. Vă recomandăm să verificați cu asigurătorul dumneavoastră acoperirea specifică înainte de programare și să aduceți documentele necesare pentru decontare.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Care sunt formele de plată acceptate?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Acceptăm următoarele forme de plată:</p>
+                <ul>
+                  <li>Numerar</li>
+                  <li>Card bancar (Visa, Mastercard, American Express)</li>
+                  <li>Transfer bancar (pentru servicii programate în avans)</li>
+                  <li>Decontare prin asigurări private (cu documentația necesară)</li>
+                  <li>Voucher Materna</li>
+                </ul>
+                <p>Informațiile complete despre prețuri sunt disponibile la recepția clinicilor sau pot fi solicitate telefonic înainte de programare.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Cum este asigurată confidențialitatea datelor medicale?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Confidențialitatea datelor dumneavoastră medicale este o prioritate absolută. Măsurile implementate includ:</p>
+                <ul>
+                  <li>Respectarea strictă a legislației GDPR și a reglementărilor privind datele medicale</li>
+                  <li>Acces restricționat la dosarele medicale, doar pentru personalul medical implicat direct în îngrijirea dumneavoastră</li>
+                  <li>Sisteme informatice securizate cu multiple niveluri de protecție</li>
+                  <li>Protocoale stricte pentru transmiterea rezultatelor medicale (verificare identitate, parole, etc.)</li>
+                  <li>Formarea continuă a personalului privind protecția datelor</li>
+                  <li>Acorduri de confidențialitate cu toți colaboratorii</li>
+                </ul>
+                <p>Informațiile medicale nu sunt divulgate terților fără consimțământul dumneavoastră explicit, cu excepția situațiilor prevăzute de lege. Aveți dreptul de a solicita accesul la propriul dosar medical și de a cere copii ale documentelor medicale.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Pot veni însoțită la consultație?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Da, puteți veni însoțită la consultație după preferințele personale:</p>
+                <ul>
+                  <li>Partenerul, un membru al familiei sau o prietenă pot aștepta în sala de așteptare</li>
+                  <li>Dacă doriți, însoțitorul poate fi prezent în camera de consultație cu acordul dumneavoastră</li>
+                  <li>Pentru consultațiile din timpul sarcinii, încurajăm prezența partenerului</li>
+                  <li>Pentru minorii sub 16 ani, este necesară prezența unui părinte sau tutore legal</li>
+                </ul>
+                <p>Decizia vă aparține în totalitate și va fi respectată. Prioritatea noastră este să vă simțiți confortabil și în siguranță pe parcursul consultației.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Pot primi o a doua opinie medicală?
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Absolut, solicitarea unei a doua opinii medicale este un drept fundamental al pacientului și o practică recomandată în cazuri complexe. Pentru a facilita acest proces:</p>
+                <ul>
+                  <li>Vă putem furniza un raport medical detaliat cu toate constatările și recomandările</li>
+                  <li>Puteți solicita copii ale rezultatelor investigațiilor efectuate</li>
+                  <li>Suntem deschisi să discutăm și să analizăm opiniile altor specialiști</li>
+                  <li>Putem colabora direct cu alți medici la cererea dumneavoastră</li>
+                </ul>
+                <p>Încurajăm pacientele să fie bine informate și să aibă încredere deplină în planul de tratament. O a doua opinie poate oferi claritate, confirmare sau alternative terapeutice, contribuind la decizia medicală optimă pentru situația dumneavoastră specifică.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2023</span> Dr. Silvia Dumitrescu. Toate drepturile rezervate.</p>
+        
+      </div>
+    </div>
+  </footer>
+  
+  <style>
+  .footer {
+    background-color: #5a189a; /* Deep purple background */
+    color: #fff;
+    padding: 3rem 0 1.5rem;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-col h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  .footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 50px;
+    background-color: #c77dff; /* Light purple accent */
+  }
+  
+  .footer-col p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    background-color: #c77dff; /* Light purple on hover */
+    transform: translateY(-3px);
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 0.8rem;
+  }
+  
+  .footer-links a::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #c77dff; /* Light purple accent */
+  }
+  
+  .footer-links a:hover {
+    color: #fff;
+    transform: translateX(5px);
+  }
+  
+  .contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .contact-info li {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-info i {
+    color: #c77dff; /* Light purple accent */
+    margin-right: 0.8rem;
+    min-width: 16px;
+  }
+  
+  .contact-info a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-info a:hover {
+    color: #fff;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .footer-col h3 {
+      margin-bottom: 1rem;
+    }
+  }
+  </style>
+  
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mainNav = document.getElementById('main-nav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      mobileMenuBtn.classList.toggle('active');
+    });
+    
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isActive = question.classList.contains('active');
+        
+        // Close all
+        document.querySelectorAll('.faq-question').forEach(q => {
+          q.classList.remove('active');
+          q.nextElementSibling.classList.remove('show');
+        });
+        
+        // Open clicked if wasn't already open
+        if (!isActive) {
+          question.classList.add('active');
+          answer.classList.add('show');
+        }
+      });
+    });
+    
+    // Category Filter
+    document.querySelectorAll('.faq-tag').forEach(tag => {
+      tag.addEventListener('click', () => {
+        const category = tag.dataset.category;
+        
+        // Update active tag
+        document.querySelectorAll('.faq-tag').forEach(t => {
+          t.classList.remove('active');
+        });
+        tag.classList.add('active');
+        
+        // Filter categories
+        if (category === 'all') {
+          document.querySelectorAll('.faq-category').forEach(cat => {
+            cat.style.display = 'block';
+          });
+        } else {
+          document.querySelectorAll('.faq-category').forEach(cat => {
+            if (cat.dataset.category === category) {
+              cat.style.display = 'block';
+            } else {
+              cat.style.display = 'none';
+            }
+          });
+        }
+      });
+    });
+
+    // Add animation classes to FAQ elements
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add .animate-on-scroll to all FAQ categories, tags, and items
+      document.querySelectorAll('.faq-category, .faq-tag, .faq-item').forEach(function(el) {
+        el.classList.add('animate-on-scroll');
+      });
+      // Intersection Observer for animation
+      const observer = new window.IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

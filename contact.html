@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4X6TB0NN8T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4X6TB0NN8T');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Dr. Silvia Dumitrescu | Obstetrică-Ginecologie București</title>
+  <meta name="description" content="Programări și contact Dr. Silvia Dumitrescu. Medic specialist obstetrică-ginecologie în București.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  
+  <style>
+    /* Enhanced form styling */
+    .contact-form {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding: 0;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      background-color: #fff;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+      outline: none;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+      font-size: 15px;
+    }
+    
+    .required-field::after {
+      content: "*";
+      color: var(--primary);
+      margin-left: 4px;
+    }
+    
+    .error-message {
+      color: #e74c3c;
+      font-size: 13px;
+      margin-top: 5px;
+      min-height: 18px;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .consent-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-left: 0; 
+    }
+    
+    .consent-checkbox input {
+      margin-top: 5px;
+    }
+    
+    .character-counter {
+      text-align: right;
+      font-size: 13px;
+      color: #777;
+      margin-top: 5px;
+    }
+    
+    /* Enhanced contact info styling */
+    .contact-info-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  border-top: 4px solid var(--primary); /* Add this line */
+}
+    
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .contact-method:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    
+    .contact-icon {
+  background-color: #fff; /* Change from rgba(var(--primary-rgb), 0.1) to white */
+  color: var(--primary); /* Keep the purple color for the icon itself */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+    
+    .contact-details h3 {
+      font-size: 1.1rem;
+      margin: 0 0 5px 0;
+      color: #333;
+    }
+    
+    .contact-details a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+    
+    .contact-details p {
+      margin: 5px 0 0 0;
+      color: #666;
+      font-size: 14px;
+    }
+    
+    /* Enhanced availability status */
+    .availability-status {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    }
+    
+    .status-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    
+    .status-indicator.online {
+      background-color: #4caf50;
+      box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    }
+    
+    .status-indicator.offline {
+      background-color: #f44336;
+      box-shadow: 0 0 10px rgba(244, 67, 54, 0.6);
+    }
+    
+    /* Enhanced quick actions */
+    .quick-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    /* Enhanced emergency contact */
+    .emergency-contact {
+      display: flex;
+      align-items: center;
+      margin-top: 3rem;
+      background-color: #fff3f3;
+      border-radius: 8px;
+      padding: 1.5rem;
+      border-left: 4px solid #ff5252;
+    }
+    
+    .emergency-icon {
+      color: #ff5252;
+      font-size: 2rem;
+      margin-right: 1.5rem;
+    }
+    
+    .emergency-content h3 {
+      margin: 0 0 8px 0;
+      color: #333;
+    }
+    
+    .emergency-content p {
+      margin: 0 0 15px 0;
+      color: #666;
+    }
+    
+    .btn-secondary {
+      background-color: #ff5252;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #e04646;
+    }
+    
+    /* Enhanced loading state */
+    .btn-primary {
+      position: relative;
+      background-color: var(--primary);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      overflow: hidden;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-darker, #0056b3);
+    }
+    
+    .loader {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.8s linear infinite;
+      position: absolute;
+    }
+    
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .btn.loading .btn-text {
+      visibility: hidden;
+    }
+    
+    .btn.loading .loader {
+      display: block;
+    }
+    
+    /* Form submit with success animation */
+    @keyframes checkmark {
+      0% {
+        height: 0;
+        width: 0;
+        opacity: 1;
+      }
+      20% {
+        height: 0;
+        width: 10px;
+        opacity: 1;
+      }
+      40% {
+        height: 20px;
+        width: 10px;
+        opacity: 1;
+      }
+      100% {
+        height: 20px;
+        width: 10px;
+        opacity: 1;
+      }
+    }
+    
+    /* Improve form focus */
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+    }
+    
+    /* Style validation status */
+    input.valid,
+    textarea.valid,
+    select.valid {
+      border-color: #4caf50;
+    }
+    
+    input.invalid,
+    textarea.invalid,
+    select.invalid {
+      border-color: #f44336;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-img">SD</div>
+        <div class="logo-text">Dr. Silvia Dumitrescu</div>
+      </a>
+      
+      <div class="language-switcher">
+        <button class="language-btn active">RO</button>
+        <button class="language-btn">EN</button>
+      </div>
+      
+      <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Acasă</a></li>
+          <li><a href="about.html" class="nav-link">Despre</a></li>
+          <li><a href="services.html" class="nav-link">Servicii</a></li>
+          <li><a href="reviews.html" class="nav-link">Recomandări</a></li>
+          <li><a href="locations.html" class="nav-link">Locații</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="header-content">
+      <h1 class="header-title">Programări și Contact</h1>
+      <p class="header-subtitle">Suntem aici pentru orice întrebări sau pentru a programa o consultație</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .header-title {
+    color: #343a40;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .header-subtitle {
+    color: #6c757d;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 2rem 1rem;
+    }
+    
+    .header-title {
+      font-size: 2rem;
+    }
+    
+    .header-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-header {
+      padding: 1.5rem 0.75rem;
+    }
+    
+    .header-title {
+      font-size: 1.75rem;
+    }
+    
+    .header-subtitle {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+  <!-- Enhanced Contact Section -->
+  <section class="section contact-section" data-aos="fade-up">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Improved Contact Form -->
+        <div class="contact-form-container" data-aos="fade-right">
+          <h2 class="section-title-left">Programare Consultație</h2>
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name" class="required-field">Nume complet</label>
+              <input type="text" id="name" name="name" 
+                     pattern="^[a-zA-ZăâîșțĂÂÎȘȚ ]{2,50}$"
+                     required
+                     autocomplete="name">
+              <div class="error-message" data-error="name"></div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email" class="required-field">Email</label>
+                <input type="email" id="email" name="email" 
+                       required
+                       autocomplete="email">
+                <div class="error-message" data-error="email"></div>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone" class="required-field">Telefon</label>
+                <input type="tel" id="phone" name="phone" 
+                       pattern="^(\+4|)?(07[0-8]{1}[0-9]{1}|02[0-9]{2}|03[0-9]{2}){1}?(\s|\.|\-)?([0-9]{3}(\s|\.|\-|)){2}$"
+                       required
+                       autocomplete="tel">
+                <div class="error-message" data-error="phone"></div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="service" class="required-field">Tip Consultație</label>
+                <select id="service" name="service" required>
+                  <option value="">Selectați serviciul dorit</option>
+                  <option value="consultatie-ginecologica">Consultație Ginecologică</option>
+                  <option value="monitorizare-sarcina">Monitorizare Sarcină</option>
+                  <option value="ecografie">Ecografie</option>
+                  <option value="control-periodic">Control Periodic</option>
+                  <option value="altele">Alte Servicii</option>
+                </select>
+                <div class="error-message" data-error="service"></div>
+              </div>
+              
+              <div class="form-group">
+                <label for="preferred-date">Data Preferată</label>
+                <input type="date" id="preferred-date" name="preferred-date" min="">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="required-field">Mesaj</label>
+              <textarea id="message" name="message" rows="5" 
+                        required
+                        minlength="10"
+                        maxlength="500"></textarea>
+              <div class="character-counter">
+                <span id="charCount">0</span>/500
+              </div>
+              <div class="error-message" data-error="message"></div>
+            </div>
+
+            <div class="form-group">
+              <div class="consent-checkbox">
+                <input type="checkbox" id="gdpr-consent" name="gdpr-consent" required>
+                <label for="gdpr-consent" class="gdpr-label">
+                    <span style="margin-left: -344px">Sunt de acord cu <a href="/privacy" class="link-primary">Politica de Confidențialitate</a></span>
+                </label>
+              </div>
+              <div class="error-message" data-error="gdpr-consent"></div>
+            </div>
+            
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                <span class="btn-text">Trimite mesaj</span>
+                <div class="loader"></div>
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Enhanced Contact Info -->
+        <div class="contact-info-container" data-aos="fade-left" style="border-top: 4px solid var(--primary); padding-top: 1rem;">
+          <h2 class="section-title-left">Date de contact</h2>
+          
+          <div class="contact-info-card">
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Telefon</h3>
+                <a href="tel:+40123456789">+40 123 456 789</a>
+                <p>Luni-Vineri: 9:00-17:00</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <a href="mailto:contact@drsilvia.com">contact@drsilvia.com</a>
+                <p>Răspundem în maxim 24 de ore</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Locații</h3>
+                <p><strong>Clinica MedLife:</strong> Bd. Iancu de Hunedoara 31</p>
+                <p><strong>Regina Maria:</strong> Calea Dorobanților 82</p>
+                <a href="locations.html" class="location-link">Vezi toate locațiile <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Program consultații</h3>
+                <p><strong>Luni-Vineri:</strong> 9:00-17:00</p>
+                <p><strong>Weekend:</strong> Închis (cu excepția urgențelor)</p>
+              </div>
+            </div>
+            
+            <div class="contact-social">
+              <h3>Urmărește-mă</h3>
+              <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Real-time Availability -->
+          <div class="availability-status">
+            <div class="status-indicator" id="statusIndicator"></div>
+            <p>Status: <span id="availabilityText">Se verifică disponibilitatea...</span></p>
+          </div>
+          
+          <!-- Quick Actions -->
+          <div class="quick-actions">
+            <button class="btn btn-outline" onclick="window.location.href='tel:+40123456789'">
+              <i class="fas fa-phone"></i> Sună acum
+            </button>
+            <button class="btn btn-outline" onclick="window.location.href='https://wa.me/40123456789'">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Emergency Contact -->
+      <div class="emergency-contact" data-aos="fade-up">
+        <div class="emergency-icon">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="emergency-content">
+          <h3>Urgențe medicale</h3>
+          <p>Pentru situații urgente, vă rugăm să sunați direct la numărul de urgență sau să vă prezentați la cea mai apropiată unitate de urgență.</p>
+          <a href="tel:112" class="btn btn-secondary">
+            <i class="fas fa-phone"></i> Sună 112
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Dr. Silvia Dumitrescu</h3>
+          <p>Medic specialist obstetrică-ginecologie cu peste 15 ani de experiență în București.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Linkuri rapide</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="about.html">Despre mine</a></li>
+            <li><a href="services.html">Servicii</a></li>
+            <li><a href="reviews.html">Recomandări</a></li>
+            <li><a href="locations.html">Locații</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:+40123456789">+40 123 456 789</a>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:contact@drsilvia.com">contact@drsilvia.com</a>
+            </li>
+            <li>
+              <i class="fas fa-clock"></i>
+              <span>Luni-Vineri: 9:00-17:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2023</span> Dr. Silvia Dumitrescu. Toate drepturile rezervate.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+  
+  <script>
+    // Initialize AOS
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      });
+      
+      // Set current year in footer
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      
+      // Set minimum date for preferred date input to today
+      const today = new Date();
+      const formattedDate = today.toISOString().split('T')[0];
+      document.getElementById('preferred-date').min = formattedDate;
+      
+      // Initialize EmailJS
+      (function() {
+        emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+      })();
+      
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const messageField = document.getElementById('message');
+      const charCount = document.getElementById('charCount');
+      
+      // Character counter
+      messageField.addEventListener('input', function() {
+        const count = this.value.length;
+        charCount.textContent = count;
+        if (count > 450) {
+          charCount.style.color = count > 500 ? '#f44336' : '#ff9800';
+        } else {
+          charCount.style.color = '#777';
+        }
+      });
+      
+      // Form validation
+      const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+      inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+          validateInput(this);
+        });
+        
+        input.addEventListener('input', function() {
+          if (this.classList.contains('invalid')) {
+            validateInput(this);
+          }
+        });
+      });
+      
+      function validateInput(input) {
+        const errorDiv = document.querySelector(`[data-error="${input.name}"]`);
+        if (!input.validity.valid) {
+          input.classList.add('invalid');
+          input.classList.remove('valid');
+          errorDiv.textContent = getErrorMessage(input);
+        } else {
+          input.classList.remove('invalid');
+          input.classList.add('valid');
+          errorDiv.textContent = '';
+        }
+      }
+      
+      function getErrorMessage(input) {
+        if (input.validity.valueMissing) {
+          return 'Acest câmp este obligatoriu.';
+        } else if (input.validity.typeMismatch) {
+          return input.type === 'email' ? 'Vă rugăm introduceți o adresă de email validă.' : 'Format invalid.';
+        } else if (input.validity.patternMismatch) {
+          if (input.name === 'name') {
+            return 'Vă rugăm introduceți un nume valid.';
+          } else if (input.name === 'phone') {
+            return 'Vă rugăm introduceți un număr de telefon valid (format românesc).';
+          }
+          return 'Format invalid.';
+        } else if (input.validity.tooShort) {
+          return `Minim ${input.minLength} caractere.`;
+        } else if (input.validity.tooLong) {
+          return `Maxim ${input.maxLength} caractere.`;
+        }
+        return 'Valoare invalidă.';
+      }
+      
+      // Form submission
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Validate all inputs
+        let isFormValid = true;
+        inputs.forEach(input => {
+          if (!input.validity.valid) {
+            validateInput(input);
+            isFormValid = false;
+          }
+        });
+        
+        if (!isFormValid) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Verificați formularul',
+            text: 'Vă rugăm să completați corect toate câmpurile obligatorii.',
+            confirmButtonColor: 'var(--primary)'
+          });
+          return;
+        }
+        
+        // Show loading state
+        submitBtn.classList.add('loading');
+        
+        try {
+          // Prepare form data
+          const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            service: document.getElementById('service').value,
+            preferredDate: document.getElementById('preferred-date').value || 'Nespecificat',
+            message: document.getElementById('message').value
+          };
+          
+          // Send email using EmailJS
+          await emailjs.send(
+            'default_service', // Replace with your EmailJS service ID
+            'contact_form', // Replace with your EmailJS template ID
+            {
+              to_email: 'contactform@gmail.com', // Your email address
+              from_name: formData.name,
+              from_email: formData.email,
+              phone: formData.phone,
+              service: formData.service,
+              preferred_date: formData.preferredDate,
+              message: formData.message
+            }
+          );
+          
+          // Show success message
+          Swal.fire({
+            icon: 'success',
+            title: 'Mesaj trimis cu succes!',
+            text: 'Vă mulțumim pentru mesaj. Vă vom contacta în cel mai scurt timp posibil.',
+            confirmButtonColor: 'var(--primary)'
+          });
+          
+          // Reset form
+          form.reset();
+          inputs.forEach(input => {
+            input.classList.remove('valid');
+            input.classList.remove('invalid');
+          });
+          
+          // Reset character counter
+          charCount.textContent = '0';
+          
+        } catch (error) {
+          console.error('Error sending email:', error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'A apărut o eroare la trimiterea mesajului. Vă rugăm să încercați din nou sau să ne contactați direct prin telefon.',
+            confirmButtonColor: 'var(--primary)'
+          });
+        } finally {
+          submitBtn.classList.remove('loading');
+        }
+      });
+      
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mainNav = document.getElementById('main-nav');
+      
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+          mainNav.classList.toggle('show');
+          this.classList.toggle('active');
+        });
+      }
+      
+      // Update availability status
+      updateAvailabilityStatus();
+      setInterval(updateAvailabilityStatus, 60000);
+    });
+    
+    function updateAvailabilityStatus() {
+      const now = new Date();
+      const hour = now.getHours();
+      const day = now.getDay();
+      
+      const isWorkingHours = hour >= 9 && hour < 17;
+      const isWorkingDay = day >= 1 && day <= 5;
+      const isAvailable = isWorkingDay && isWorkingHours;
+      
+      const statusIndicator = document.getElementById('statusIndicator');
+      const availabilityText = document.getElementById('availabilityText');
+      
+      if (isAvailable) {
+        statusIndicator.classList.add('online');
+        statusIndicator.classList.remove('offline');
+        availabilityText.textContent = 'Disponibil pentru programări';
+      } else {
+        statusIndicator.classList.add('offline');
+        statusIndicator.classList.remove('online');
+        
+        if (!isWorkingDay) {
+          availabilityText.textContent = 'Indisponibil (weekend)';
+        } else {
+          availabilityText.textContent = 'În afara programului de lucru';
+        }
+      }
+    }
+    
+    // Handle form input for phone formatting
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+      phoneInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 10) {
+          value = value.slice(0, 10);
+        }
+        
+        // Format as XXX.XXX.XXX
+        if (value.length > 6) {
+          value = value.slice(0, 3) + '.' + value.slice(3, 6) + '.' + value.slice(6);
+        } else if (value.length > 3) {
+          value = value.slice(0, 3) + '.' + value.slice(3);
+        }
+        
+        e.target.value = value;
+      });
+    }
+    
+    // Language switcher functionality
+    const languageButtons = document.querySelectorAll('.language-btn');
+    if (languageButtons.length) {
+      languageButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          languageButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Here you would implement the actual language switching
+          // For example, redirect to the English version or change content
+          const lang = this.textContent.trim();
+          if (lang === 'EN' && !window.location.pathname.includes('/en/')) {
+            // This is just a placeholder - implement based on your site structure
+            // window.location.href = '/en' + window.location.pathname;
+            console.log('Switching to English');
+            // For demo purposes, just show an alert
+            Swal.fire({
+              icon: 'info',
+              title: 'Language Change',
+              text: 'Switching to English version...',
+              showConfirmButton: false,
+              timer: 1500
+            });
+          }
+        });
+      });
+    }
+    
+    // Smooth scroll for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href !== "#") {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            const offsetTop = target.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+    
+    // Add scroll-based animations for header
+    const header = document.getElementById('header');
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > 100) {
+        header.classList.add('scrolled');
+        if (scrollTop > lastScrollTop) {
+          // Scrolling down
+          header.classList.add('hide');
+        } else {
+          // Scrolling up
+          header.classList.remove('hide');
+        }
+      } else {
+        header.classList.remove('scrolled');
+        header.classList.remove('hide');
+      }
+      
+      lastScrollTop = scrollTop;
+    });
+    
+    // Add hover effects for contact method cards
+    const contactMethods = document.querySelectorAll('.contact-method');
+    contactMethods.forEach(method => {
+      method.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+        this.style.transition = 'transform 0.3s ease';
+      });
+      
+      method.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+    
+    // Handle GDPR consent validation with better UX
+    const gdprCheckbox = document.getElementById('gdpr-consent');
+    const gdprLabel = document.querySelector('.gdpr-label');
+    
+    if (gdprCheckbox && gdprLabel) {
+      gdprLabel.addEventListener('click', function(e) {
+        // Don't trigger if clicking on the link inside the label
+        if (e.target.tagName === 'A') {
+          return;
+        }
+        
+        // Toggle the checkbox
+        gdprCheckbox.checked = !gdprCheckbox.checked;
+        
+        // Validate
+        const errorDiv = document.querySelector('[data-error="gdpr-consent"]');
+        if (gdprCheckbox.checked) {
+          errorDiv.textContent = '';
+        } else {
+          errorDiv.textContent = 'Trebuie să acceptați politica de confidențialitate.';
+        }
+      });
+    }
+    
+    // Initialize service tooltips
+    const serviceSelect = document.getElementById('service');
+    if (serviceSelect) {
+      // Add descriptions for services
+      const serviceDescriptions = {
+        'consultatie-ginecologica': 'Examinare completă și discuție despre problemele ginecologice',
+        'monitorizare-sarcina': 'Urmărirea evoluției sarcinii și stării de sănătate a mamei și fătului',
+        'ecografie': 'Vizualizare imagistică pentru diagnostic sau monitorizare',
+        'control-periodic': 'Verificare de rutină recomandată anual',
+        'altele': 'Alte servicii medicale - descrieți în mesaj'
+      };
+      
+      // Create tooltip element
+      const tooltip = document.createElement('div');
+      tooltip.className = 'service-tooltip';
+      tooltip.style.position = 'absolute';
+      tooltip.style.backgroundColor = '#333';
+      tooltip.style.color = '#fff';
+      tooltip.style.padding = '8px 12px';
+      tooltip.style.borderRadius = '4px';
+      tooltip.style.fontSize = '14px';
+      tooltip.style.zIndex = '100';
+      tooltip.style.maxWidth = '250px';
+      tooltip.style.display = 'none';
+      tooltip.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
+      document.body.appendChild(tooltip);
+      
+      // Show tooltip on change
+      serviceSelect.addEventListener('change', function() {
+        const selectedValue = this.value;
+        if (selectedValue && serviceDescriptions[selectedValue]) {
+          const rect = this.getBoundingClientRect();
+          tooltip.textContent = serviceDescriptions[selectedValue];
+          tooltip.style.left = rect.left + 'px';
+          tooltip.style.top = (rect.bottom + 10) + 'px';
+          tooltip.style.display = 'block';
+          
+          // Hide after 3 seconds
+          setTimeout(() => {
+            tooltip.style.display = 'none';
+          }, 3000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
