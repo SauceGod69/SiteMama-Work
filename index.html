@@ -52,9 +52,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <!-- Favicon - Updated to use logo.png -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+  <link rel="shortcut icon" href="images/logo.png">
   
   <!-- CSS -->
   <link href="css/style.css" rel="stylesheet">
@@ -169,6 +174,660 @@
     .service-card:hover .service-icon::after {
       opacity: 1;
       transform: rotate(45deg) translate(30%, 30%);
+    }
+
+    /* Enhanced feature cards with subtle backgrounds */
+    .feature {
+      border-radius: 1.2rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.98) 100%);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(93, 75, 158, 0.08);
+      overflow: hidden;
+      transition: all var(--transition-spring);
+      position: relative;
+    }
+
+    .feature::before {
+      width: 6px;
+      background: var(--primary-gradient);
+      transition: width var(--transition-smooth);
+    }
+
+    .feature::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, rgba(93, 75, 158, 0.06) 0%, transparent 70%);
+      transition: all var(--transition-smooth);
+      opacity: 0;
+    }
+
+    .feature:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: var(--shadow-md);
+      background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(250,248,252,1) 100%);
+    }
+
+    .feature:hover::before {
+      width: 8px;
+    }
+
+    .feature:hover::after {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    /* Enhanced testimonial card with original colors */
+    .testimonial-card {
+      border-radius: 1.5rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(250,248,252,0.98) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(93, 75, 158, 0.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--primary-gradient);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: var(--shadow-lg), var(--glow-hover);
+    }
+
+    .author-info {
+      background: var(--primary-gradient);
+      box-shadow: var(--shadow-sm), var(--glow-primary);
+      border-radius: 0.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .author-info::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .testimonial-card:hover .author-info::before {
+      left: 100%;
+    }
+
+    /* Enhanced buttons maintaining original style */
+    .btn-primary {
+      background: var(--primary-gradient);
+      box-shadow: var(--shadow-sm), var(--glow-primary);
+      border: none;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--transition-spring);
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-gradient-hover);
+      box-shadow: var(--shadow-md), 0 0 30px rgba(93, 75, 158, 0.4);
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 2px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-secondary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-gradient);
+      transition: left 0.4s ease;
+      z-index: -1;
+    }
+
+    .btn-secondary:hover {
+      color: white;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: var(--shadow-md), var(--glow-primary);
+    }
+
+    .btn-secondary:hover::before {
+      left: 0;
+    }
+
+    .service-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      color: var(--primary);
+      font-weight: 600;
+      padding: var(--space-md) var(--space-lg);
+      background: var(--white);
+      border: 2px solid var(--primary);
+      border-radius: var(--radius-pill);
+      margin-top: auto;
+      transition: all var(--transition-normal);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      min-height: 48px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-gradient);
+      transition: left 0.4s ease;
+      z-index: -1;
+      border-radius: inherit;
+    }
+
+    .service-link:hover {
+      color: white;
+      box-shadow: var(--shadow-sm), var(--glow-primary);
+      transform: translateY(-1px);
+    }
+
+    .service-link:hover::before {
+      left: 0;
+    }
+
+    /* Enhanced hero with responsive background image */
+    .hero {
+      padding: 120px 0 var(--space-xxl);
+      position: relative;
+      color: var(--white);
+      text-align: center;
+      min-height: 100vh;
+      min-height: 100dvh; /* Modern browsers */
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      background: transparent;
+      border: none;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Enhanced hero background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/hero-bg.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -1;
+      
+      /* Desktop and large screens */
+      background-size: cover;
+      background-position: center center;
+    }
+
+    /* Hero text responsive sizing */
+    .hero-title {
+      color: var(--white);
+      margin-bottom: var(--space-lg);
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.85);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      margin-bottom: var(--space-xl);
+      opacity: 1; 
+      color: var(--white);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.75);
+      line-height: 1.4;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Responsive hero CTA buttons */
+    .hero-cta {
+      display: flex;
+      gap: var(--space-lg);
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: var(--space-xl);
+    }
+
+    .hero-cta .btn {
+      min-width: 200px;
+      padding: var(--space-lg) var(--space-xl);
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      border-radius: var(--radius-pill);
+      transition: all var(--transition-normal);
+    }
+
+    /* iPad Pro 12.9" (1024px x 1366px) */
+    @media screen and (min-width: 1024px) and (max-width: 1366px) {
+      .hero {
+        min-height: 85vh;
+        padding: 100px 0 var(--space-xl);
+      }
+      
+      .hero::before {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center center;
+      }
+      
+      .hero-content {
+        padding: 2rem;
+        max-width: 800px;
+      }
+      
+      .hero-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        margin-bottom: var(--space-md);
+      }
+      
+      .hero-subtitle {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        margin-bottom: var(--space-lg);
+      }
+      
+      .hero-cta {
+        gap: var(--space-md);
+        margin-top: var(--space-lg);
+      }
+      
+      .hero-cta .btn {
+        min-width: 180px;
+        padding: var(--space-md) var(--space-lg);
+        font-size: 1rem;
+      }
+    }
+
+    /* iPad (768px x 1024px) portrait and landscape */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .hero {
+        min-height: 80vh;
+        padding: 90px 0 var(--space-xl);
+      }
+      
+      .hero::before {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center 25%;
+      }
+      
+      .hero-content {
+        padding: 2rem 1.5rem;
+        max-width: 700px;
+      }
+      
+      .hero-title {
+        font-size: clamp(2.2rem, 4.5vw, 3rem);
+        margin-bottom: var(--space-md);
+      }
+      
+      .hero-subtitle {
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
+        margin-bottom: var(--space-lg);
+      }
+      
+      .hero-cta {
+        gap: var(--space-md);
+        margin-top: var(--space-lg);
+      }
+      
+      .hero-cta .btn {
+        min-width: 160px;
+        padding: var(--space-md) var(--space-lg);
+        font-size: 0.95rem;
+      }
+    }
+
+    /* iPad Mini (768px x 1024px) specific adjustments */
+    @media screen and (min-width: 768px) and (max-width: 820px) {
+      .hero {
+        min-height: 75vh;
+        padding: 85px 0 var(--space-lg);
+      }
+      
+      .hero::before {
+        background-position: center 30%;
+      }
+      
+      .hero-content {
+        padding: 1.8rem 1.2rem;
+      }
+    }
+
+    /* Tablet landscape (992px - 1200px) */
+    @media (max-width: 1200px) and (min-width: 993px) {
+      .hero {
+        min-height: 90vh;
+        padding: 100px 0 var(--space-xl);
+      }
+      
+      .hero::before {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center center;
+      }
+      
+      .hero-content {
+        padding: 2rem;
+        max-width: 800px;
+      }
+    }
+
+    /* Mobile landscape and small tablets (481px - 768px) */
+    @media (max-width: 768px) and (min-width: 481px) {
+      .hero {
+        min-height: 70vh;
+        padding: 80px 0 var(--space-lg);
+      }
+      
+      .hero::before {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center 25%;
+      }
+      
+      .hero-content {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        max-width: 600px;
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+        gap: var(--space-md);
+        align-items: stretch;
+      }
+      
+      .hero-cta .btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        min-width: auto;
+      }
+    }
+
+    /* Mobile portrait (320px - 480px) */
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 60px 0 var(--space-lg);
+      }
+      
+      .hero::before {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center 20%;
+      }
+      
+      .hero-content {
+        padding: 1rem;
+        border-radius: 0.8rem;
+        width: 100%;
+        max-width: none;
+      }
+      
+      .hero-title {
+        margin-bottom: var(--space-md);
+      }
+      
+      .hero-subtitle {
+        margin-bottom: var(--space-lg);
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+        gap: var(--space-sm);
+        margin-top: var(--space-lg);
+      }
+      
+      .hero-cta .btn {
+        width: 100%;
+        max-width: none;
+        min-width: auto;
+        padding: var(--space-md) var(--space-lg);
+        font-size: 1rem;
+      }
+    }
+
+    /* Extra small devices (≤320px) */
+    @media (max-width: 320px) {
+      .hero {
+        min-height: 100vh;
+        padding: 50px 0 var(--space-md);
+      }
+      
+      .hero::before {
+        background-position: center 15%;
+      }
+      
+      .hero-content {
+        padding: 0.75rem;
+      }
+      
+      .hero-cta .btn {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Large screens (≥1400px) */
+    @media (min-width: 1400px) {
+      .hero {
+        min-height: 100vh;
+        padding: 140px 0 var(--space-xxl);
+      }
+      
+      .hero-content {
+        padding: 3rem;
+        max-width: 1000px;
+      }
+      
+      .hero-cta .btn {
+        min-width: 220px;
+        padding: var(--space-lg) var(--space-xxl);
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Ultra-wide screens (≥1800px) */
+    @media (min-width: 1800px) {
+      .hero {
+        min-height: 90vh;
+      }
+      
+      .hero-content {
+        max-width: 1200px;
+      }
+    }
+
+    /* High DPI/Retina displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .hero::before {
+        background-image: url('images/hero-bg@2x.jpg'), url('images/hero-bg.jpg');
+      }
+    }
+
+    /* Landscape orientation adjustments for tablets */
+    @media (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) {
+      .hero {
+        min-height: 90vh;
+        padding: 70px 0 var(--space-lg);
+      }
+      
+      .hero::before {
+        background-position: center center;
+      }
+      
+      .hero-content {
+        padding: 1.5rem;
+      }
+      
+      .hero-title {
+        margin-bottom: var(--space-sm);
+      }
+      
+      .hero-subtitle {
+        margin-bottom: var(--space-md);
+      }
+      
+      .hero-cta {
+        margin-top: var(--space-md);
+        gap: var(--space-sm);
+      }
+    }
+
+    /* Portrait orientation adjustments for tablets */
+    @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+      .hero {
+        min-height: 80vh;
+        padding: 100px 0 var(--space-xl);
+      }
+      
+      .hero::before {
+        background-position: center 20%;
+      }
+    }
+
+    /* Landscape orientation adjustments for small screens */
+    @media (orientation: landscape) and (max-height: 600px) {
+      .hero {
+        min-height: 100vh;
+        padding: 40px 0 var(--space-md);
+      }
+      
+      .hero-content {
+        padding: 1rem;
+      }
+      
+      .hero-title {
+        margin-bottom: var(--space-sm);
+      }
+      
+      .hero-subtitle {
+        margin-bottom: var(--space-md);
+      }
+      
+      .hero-cta {
+        margin-top: var(--space-md);
+        gap: var(--space-sm);
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      .hero {
+        min-height: auto;
+        padding: var(--space-lg) 0;
+        background: var(--light) !important;
+        color: var(--dark) !important;
+      }
+      
+      .hero::before {
+        display: none;
+      }
+      
+      .hero-title,
+      .hero-subtitle {
+        color: var(--dark) !important;
+        text-shadow: none !important;
+      }
+      
+      .hero-cta {
+        display: none;
+      }
+    }
+
+    /* Reduced motion accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .hero {
+        animation: none;
+      }
+      
+      .hero::before {
+        background-attachment: scroll;
+      }
+      
+      .hero-cta .btn {
+        transition: none;
+      }
+    }
+
+    /* High contrast mode */
+    @media (prefers-contrast: high) {
+      .hero-title,
+      .hero-subtitle {
+        text-shadow: 2px 2px 4px rgba(0,0,0,1);
+      }
+      
+      .hero-cta .btn {
+        border: 2px solid;
+      }
     }
 
     /* Enhanced feature cards with subtle backgrounds */
@@ -777,6 +1436,33 @@
     font-size: 1.6rem;
   }
 }
+    /* Service icon fix - MORE SPECIFIC RULES */
+    .featured-services .service-card .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-md);
+      font-size: 2rem;
+      color: var(--white) !important;
+      transition: all var(--transition-normal);
+    }
+    
+    .featured-services .service-card .service-icon i {
+      color: var(--white) !important;
+    }
+    
+    .featured-services .service-card:hover .service-icon {
+      transform: scale(1.05);
+      background: var(--primary-gradient-hover) !important;
+    }
+    
+    .featured-services .service-card:hover .service-icon i {
+      color: var(--white) !important;
+    }
   </style>
   
   <!-- Animations for index.html page -->
@@ -883,7 +1569,25 @@
       transform: scale(1.2);
     }
 
+    /* Service icon fix - ensure visibility when not hovered */
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-md);
+      font-size: 2rem;
+      color: var(--white); /* Ensure white color is always applied */
+      transition: all var(--transition-normal);
+    }
     
+    .service-card:hover .service-icon {
+      transform: scale(1.05);
+      background: var(--primary-gradient-hover); /* Use defined gradient on hover */
+    }
   </style>
   
   <!-- Schema.org structured data -->
@@ -1230,7 +1934,7 @@
       position: relative;
       font-weight: 600;
       font-size: clamp(0.9rem, 1.1vw, 1rem);
-      padding: var(--space-md) var(--space-xs);
+      padding: var(--space-md) var (--space-xs);
       color: var(--secondary);
       transition: color var(--transition-fast);
     }
@@ -1238,11 +1942,6 @@
     .nav-link::after {
       content: '';
       position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 3px;
-      background: var(--primary);
       transition: width var(--transition-normal);
     }
     
@@ -1354,7 +2053,7 @@
       border: none;
       box-shadow: var(--shadow-sm);
       min-height: 48px;
-      gap: var(--space-sm);
+      gap: var (--space-sm);
       text-decoration: none;
     }
     
@@ -1824,7 +2523,7 @@
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: var(--space-xl);
+      gap: var (--space-xl);
       margin-bottom: var (--space-xl);
     }
     
@@ -1908,7 +2607,7 @@
     }
     
     .footer-bottom {
-      padding: var(--space-md) 0;
+      padding: var (--space-md) 0;
       text-align: center;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -2125,7 +2824,7 @@
               <i class="fas fa-calendar-check" style="color: white;"></i>
             </div>
             <h3>Programări Rapide</h3>
-            <p>Disponibilitate în 24-48 de ore pentru consultații urgente</p>
+            <p>Programări online sau telefonic </p>
           </div>
           
           <div class="info-card">
@@ -2156,7 +2855,7 @@
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon" aria-hidden="true">
-              <i class="fas fa-female"></i>
+              <i class="fas fa-user-md"></i>
             </div>
             <h3>Consultație Ginecologică Completă</h3>
             <p>Examinare clinică detaliată, recoltarea probelor necesare și sfaturi medicale personalizate pentru fiecare pacientă.</p>
