@@ -538,7 +538,7 @@
       
       .hero-cta .btn {
         min-width: 160px;
-        padding: var(--space-md) var(--space-lg);
+        padding: var(--space-md) var (--space-lg);
         font-size: 0.95rem;
       }
     }
@@ -1367,7 +1367,7 @@
   border: 2px solid transparent;
   color: var(--secondary);
   font-size: 1.5rem;
-  cursor: pointer;
+  cursor: button;
   z-index: 1001;
   padding: 12px;
   width: 48px;
@@ -1934,7 +1934,7 @@
       position: relative;
       font-weight: 600;
       font-size: clamp(0.9rem, 1.1vw, 1rem);
-      padding: var(--space-md) var (--space-xs);
+      padding: var(--space-md) var(--space-xs);
       color: var(--secondary);
       transition: color var(--transition-fast);
     }
@@ -1942,6 +1942,11 @@
     .nav-link::after {
       content: '';
       position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
       transition: width var(--transition-normal);
     }
     
